@@ -114,7 +114,7 @@ def inspect(controller, actions, textures, final, folder):
                                for item in pipe.GetVBuffers()],
             "index_buffer": fields(pipe.GetIBuffer(), ["resourceId", "byteOffset", "byteStride", "byteSize"]),
             "sampled_images": bound_resources,
-            "viewport": [fields(item.viewport, ["x", "y", "width", "height", "minDepth", "maxDepth"])
+            "viewport": [fields(item.vp, ["x", "y", "width", "height", "minDepth", "maxDepth"])
                          for item in vk.viewportScissor.viewportScissors],
         })
         state_rows.append(row)
@@ -125,6 +125,7 @@ def inspect(controller, actions, textures, final, folder):
     biggest = max((row for row in state_rows if row["depth_test"]), key=lambda row: row["indices"])
     controller.SetFrameEvent(biggest["event"], True)
     export_mesh(controller, biggest, folder)
+    export_constants(controller, folder)
     texture_by_id = {str(texture.resourceId): texture for texture in textures}
     used_images = [item["resourceId"] for array in biggest["sampled_images"] for item in array["resources"]]
     exports = []
@@ -143,6 +144,24 @@ def inspect(controller, actions, textures, final, folder):
     for event in checkpoints:
         controller.SetFrameEvent(event, True)
         image_from_texture(controller, final).save(folder / f"progress_e{event}.png")
+    controller.SetFrameEvent(max(row["event"] for row in state_rows if row["depth_test"]), True)
+    depth = next(texture for texture in textures if str(texture.resourceId) == biggest["depth_target"])
+    raw_depth = bytes(controller.GetTextureData(depth.resourceId, rd.Subresource(0, 0, 0)))
+    values = struct.unpack(f"<{depth.width * depth.height}f", raw_depth)
+    reversed_depth = biggest["depth_function"] in ("Greater", "GreaterEqual")
+    visible = values if reversed_depth else [1.0 - value for value in values]
+    # A display-only curve makes distant geometry legible; original data is not changed.
+    preview = bytes(max(0, min(255, int(math.pow(max(0.0, value), 0.2) * 255))) for value in visible)
+    Image.frombytes("L", (depth.width, depth.height), preview).save(folder / "depth.png")
+    (folder / "depth_preview.json").write_text(json.dumps({
+        "resource": str(depth.resourceId), "event": max(row["event"] for row in state_rows if row["depth_test"]),
+        "minimum": min(values), "maximum": max(values), "reversed_depth": reversed_depth,
+        "display_curve": "pow(depth,0.2)" if reversed_depth else "pow(1-depth,0.2)"}, indent=2), encoding="utf-8")
+    usage = {str(texture.resourceId): [{"event": item.eventId,
+                                       "usage": enum_label(rd.ResourceUsage, item.usage)}
+                                      for item in controller.GetUsage(texture.resourceId)]
+             for texture in [final, depth]}
+    (folder / "resource_usage.json").write_text(json.dumps(usage, indent=2), encoding="utf-8")
     replace_shader(controller, biggest, state_rows, final, folder)
 
 
@@ -169,6 +188,30 @@ def export_mesh(controller, draw, folder):
               "post_vs": fields(mesh, ["numIndices", "vertexByteStride", "indexByteStride", "baseVertex"]),
               "positions_clip": positions, "indices": indices}
     (folder / "mesh.json").write_text(json.dumps(result), encoding="utf-8")
+
+
+def export_constants(controller, folder):
+    pipe = controller.GetPipelineState()
+    blocks = []
+    def variable(item):
+        result = fields(item, ["name", "rows", "columns", "type"])
+        result["members"] = [variable(member) for member in item.members]
+        if not item.members:
+            count = item.rows * item.columns
+            values = list(item.value.fv[:count])
+            result["float_values"] = [value if math.isfinite(value) else None for value in values]
+        return result
+    for stage, label in [(rd.ShaderStage.Vertex, "vertex"), (rd.ShaderStage.Pixel, "fragment")]:
+        reflection = pipe.GetShaderReflection(stage)
+        for slot, block in enumerate(reflection.constantBlocks):
+            bound = pipe.GetConstantBuffer(stage, slot, 0)
+            values = controller.GetCBufferVariableContents(
+                pipe.GetGraphicsPipelineObject(), reflection.resourceId, stage,
+                pipe.GetShaderEntryPoint(stage), slot, bound.resourceId, bound.byteOffset, bound.byteSize)
+            blocks.append({"stage": label, "name": block.name, "slot": slot,
+                           "binding": fields(bound, ["resourceId", "byteOffset", "byteSize"]),
+                           "values": [variable(item) for item in values]})
+    (folder / "constants.json").write_text(json.dumps(blocks, indent=2), encoding="utf-8")
 
 
 def replace_shader(controller, chosen, draws, final, folder):

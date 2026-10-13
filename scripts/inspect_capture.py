@@ -130,7 +130,21 @@ def inspect(controller, actions, textures, final, folder):
 
     biggest = max((row for row in state_rows if row["depth_test"]), key=lambda row: row["indices"])
     controller.SetFrameEvent(biggest["event"], True)
-    export_mesh(controller, biggest, folder)
+    candidates = sorted((row for row in state_rows if row["depth_write"] and row["instances"] == 1),
+                        key=lambda row: row["indices"], reverse=True)[:8]
+    mesh_candidates = []
+    for row in candidates:
+        controller.SetFrameEvent(row["event"], True)
+        result = export_mesh(controller, row, folder, f'mesh_e{row["event"]}.json')
+        positions = [point for point in result["positions_clip"] if point and point[3] > 0]
+        xs, ys = [point[0] / point[3] for point in positions], [point[1] / point[3] for point in positions]
+        span_x = max(0.0, min(1.0, max(xs)) - max(-1.0, min(xs)))
+        span_y = max(0.0, min(1.0, max(ys)) - max(-1.0, min(ys)))
+        mesh_candidates.append((span_x * span_y, result))
+    chosen_mesh = max(mesh_candidates, key=lambda item: item[0])[1]
+    (folder / "mesh.json").write_text(json.dumps(chosen_mesh), encoding="utf-8")
+    print("VISIBLE MESH:", chosen_mesh["event"], flush=True)
+    controller.SetFrameEvent(biggest["event"], True)
     export_constants(controller, folder)
     texture_by_id = {str(texture.resourceId): texture for texture in textures}
     exports = []
@@ -178,7 +192,7 @@ def inspect(controller, actions, textures, final, folder):
     replace_shader(controller, biggest, state_rows, final, folder)
 
 
-def export_mesh(controller, draw, folder):
+def export_mesh(controller, draw, folder, filename="mesh.json"):
     mesh = controller.GetPostVSData(0, 0, rd.MeshDataStage.VSOut)
     print("POST VS:", mesh.numIndices, mesh.vertexByteStride, flush=True)
     if mesh.vertexResourceId == rd.ResourceId.Null() or mesh.vertexByteStride < 16:
@@ -200,7 +214,8 @@ def export_mesh(controller, draw, folder):
     result = {"event": draw["event"], "topology": draw["topology"],
               "post_vs": fields(mesh, ["numIndices", "vertexByteStride", "indexByteStride", "baseVertex"]),
               "positions_clip": positions, "indices": indices}
-    (folder / "mesh.json").write_text(json.dumps(result), encoding="utf-8")
+    (folder / filename).write_text(json.dumps(result), encoding="utf-8")
+    return result
 
 
 def export_constants(controller, folder):

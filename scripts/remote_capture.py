@@ -15,6 +15,7 @@ import time
 
 import renderdoc as rd
 from PIL import Image
+from inspect_capture import inspect, enum_label
 
 
 def action_tree(actions, structured, depth=0):
@@ -128,7 +129,7 @@ def replay_capture(path, folder):
         manifest = {
             "capture": path.name,
             "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-            "api": str(controller.GetAPIProperties().pipelineType),
+            "api": enum_label(rd.GraphicsAPI, controller.GetAPIProperties().pipelineType),
             "frame_number": controller.GetFrameInfo().frameNumber,
             "final_image": str(final.resourceId),
             "actions": actions,
@@ -157,11 +158,12 @@ def replay_capture(path, folder):
         print("RAW IMAGE BYTES:", len(pixels), flush=True)
         if len(pixels) != final.width * final.height * 4:
             raise RuntimeError("The final image is not a tightly packed 8-bit RGBA/BGRA image")
-        order = "BGRA" if final.format.bgraOrder else "RGBA"
+        order = "BGRA" if final.format.BGRAOrder() else "RGBA"
         image = Image.frombytes("RGBA", (final.width, final.height), pixels, "raw", order)
         if controller.GetAPIProperties().pipelineType == rd.GraphicsAPI.OpenGL:
             image = image.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
         image.save(folder / "frame.png")
+        inspect(controller, actions, textures, final, folder)
         print("VERIFIED:", manifest["api"], "draws:", manifest["draw_count"],
               "textures:", len(textures), "frame:", manifest["frame_number"], flush=True)
     finally:

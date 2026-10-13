@@ -72,6 +72,8 @@ def inspect(controller, actions, textures, final, folder):
             if reflection.resourceId not in saved_shaders:
                 stem = f"shader_{int(reflection.resourceId)}_{label}"
                 (folder / f"{stem}.spv").write_bytes(bytes(reflection.rawBytes))
+                subprocess.run(["spirv-dis", str(folder / f"{stem}.spv"), "-o",
+                                str(folder / f"{stem}.spvasm")], check=True)
                 disassembly = controller.DisassembleShader(pipe.GetGraphicsPipelineObject(), reflection, "")
                 (folder / f"{stem}.txt").write_text(disassembly, encoding="utf-8")
                 saved_shaders[reflection.resourceId] = {
@@ -131,20 +133,27 @@ def inspect(controller, actions, textures, final, folder):
     export_mesh(controller, biggest, folder)
     export_constants(controller, folder)
     texture_by_id = {str(texture.resourceId): texture for texture in textures}
-    used_images = [item["resourceId"] for array in biggest["sampled_images"] for item in array["resources"]]
     exports = []
-    for resource in dict.fromkeys(used_images):
-        texture = texture_by_id.get(resource)
-        if texture is None:
-            continue
-        filename = f"texture_{int(texture.resourceId)}.png"
-        image_from_texture(controller, texture).save(folder / filename)
-        exports.append({"id": resource, "event": biggest["event"], "file": filename})
+    representatives = [biggest]
+    representatives.extend(next(row for row in state_rows if row["shaders"].get("fragment") == shader["id"])
+                           for shader in saved_shaders.values() if shader["stage"] == "fragment")
+    exported_ids = set()
+    for row in representatives:
+        controller.SetFrameEvent(row["event"], True)
+        used_images = [item["resourceId"] for array in row["sampled_images"] for item in array["resources"]]
+        for resource in dict.fromkeys(used_images):
+            texture = texture_by_id.get(resource)
+            if texture is None or resource in exported_ids:
+                continue
+            filename = f"texture_{int(texture.resourceId)}.png"
+            image_from_texture(controller, texture).save(folder / filename)
+            exports.append({"id": resource, "event": row["event"], "file": filename, "mip": 0, "slice": 0})
+            exported_ids.add(resource)
     (folder / "texture_exports.json").write_text(json.dumps(exports, indent=2), encoding="utf-8")
 
-    checkpoints = sorted({state_rows[len(state_rows) // 4]["event"],
-                          state_rows[len(state_rows) // 2]["event"],
-                          state_rows[3 * len(state_rows) // 4]["event"], state_rows[-1]["event"]})
+    checkpoints = sorted({biggest["event"], max(row["event"] for row in state_rows if row["depth_write"]),
+                          next(row["event"] for row in state_rows if row["depth_function"] == "Equal"),
+                          max(row["event"] for row in state_rows if row["depth_test"]), state_rows[-1]["event"]})
     for event in checkpoints:
         controller.SetFrameEvent(event, True)
         image_from_texture(controller, final).save(folder / f"progress_e{event}.png")

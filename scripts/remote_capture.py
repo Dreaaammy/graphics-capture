@@ -63,7 +63,7 @@ def capture_game(folder, driver):
         control.QueueCapture(80, 1)
         deadline = time.monotonic() + 300
         while time.monotonic() < deadline:
-            message = control.ReceiveMessage()
+            message = control.ReceiveMessage(None)
             if message.type == rd.TargetControlMessageType.NewCapture:
                 path = Path(message.newCapture.path)
                 print("CAPTURE:", path.name, path.stat().st_size, flush=True)

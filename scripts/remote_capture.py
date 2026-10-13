@@ -5,6 +5,7 @@ commands and images come from the game and the saved .rdc, not a reconstruction.
 """
 
 import argparse
+import faulthandler
 import hashlib
 import json
 import os
@@ -90,10 +91,13 @@ def replay_capture(path, folder):
         capture.Shutdown()
         raise RuntimeError(f"Cannot replay the capture: {status}")
     try:
+        print("READ RESOURCES", flush=True)
         resources = controller.GetResources()
         names = {resource.resourceId: resource.name for resource in resources}
         structured = controller.GetStructuredFile()
+        print("READ ACTIONS", flush=True)
         actions = action_tree(controller.GetRootActions(), structured)
+        print("READ TEXTURES", flush=True)
         textures = controller.GetTextures()
         texture_data = [{
             "id": str(texture.resourceId),
@@ -107,7 +111,9 @@ def replay_capture(path, folder):
             "format": texture.format.Name(),
             "creation_flags": int(texture.creationFlags),
         } for texture in textures]
+        print("REPLAY FINAL EVENT", max(action["event"] for action in actions), flush=True)
         controller.SetFrameEvent(max(action["event"] for action in actions), True)
+        print("FINAL EVENT REPLAYED", flush=True)
         candidates = [texture for texture in textures
                       if texture.creationFlags & rd.TextureCategory.SwapBuffer
                       and not texture.creationFlags & rd.TextureCategory.DepthTarget]
@@ -159,6 +165,7 @@ def replay_capture(path, folder):
 
 
 def main():
+    faulthandler.enable()
     parser = argparse.ArgumentParser()
     parser.add_argument("--driver", choices=("gl", "vulkan"), default="gl")
     args = parser.parse_args()

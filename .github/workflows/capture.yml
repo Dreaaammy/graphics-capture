@@ -15,6 +15,7 @@ permissions:
 jobs:
   capture:
     runs-on: ubuntu-24.04
+    container: debian:bookworm
     timeout-minutes: 25
     env:
       LIBGL_ALWAYS_SOFTWARE: "1"
@@ -22,12 +23,12 @@ jobs:
       LP_NUM_THREADS: "4"
       ALSOFT_DRIVERS: "null"
     steps:
-      - uses: actions/checkout@v4
       - name: Install official distribution packages
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y renderdoc python3-renderdoc xvfb mesa-utils mesa-vulkan-drivers vulkan-tools supertuxkart
+          apt-get update -qq
+          DEBIAN_FRONTEND=noninteractive apt-get install -y git ca-certificates renderdoc python3-renderdoc xvfb mesa-utils mesa-vulkan-drivers vulkan-tools supertuxkart spirv-tools glslang-tools
           dpkg-query -W renderdoc python3-renderdoc supertuxkart mesa-vulkan-drivers
+      - uses: actions/checkout@v4
       - name: Capture and replay
         run: |
           mkdir -p artifacts

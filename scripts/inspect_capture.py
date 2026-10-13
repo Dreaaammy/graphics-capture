@@ -105,7 +105,11 @@ def inspect(controller, actions, textures, final, folder):
             "depth_test": vk.depthStencil.depthTestEnable,
             "depth_write": vk.depthStencil.depthWriteEnable,
             "depth_function": enum_label(rd.CompareFunction, vk.depthStencil.depthFunction),
-            "blend": [fields(item, ["enabled", "writeMask", "logicOperationEnabled"])
+            "blend": [{**fields(item, ["enabled", "writeMask", "logicOperationEnabled"]),
+                       "colour_equation": {
+                           "source": enum_label(rd.BlendMultiplier, item.colorBlend.source),
+                           "destination": enum_label(rd.BlendMultiplier, item.colorBlend.destination),
+                           "operation": enum_label(rd.BlendOperation, item.colorBlend.operation)}}
                       for item in pipe.GetColorBlends()],
             "vertex_attributes": [fields(item, ["name", "vertexBuffer", "byteOffset", "format",
                                                  "perInstance", "instanceRate", "used"])
@@ -198,8 +202,14 @@ def export_constants(controller, folder):
         result["members"] = [variable(member) for member in item.members]
         if not item.members:
             count = item.rows * item.columns
-            values = list(item.value.fv[:count])
-            result["float_values"] = [value if math.isfinite(value) else None for value in values]
+            result["type"] = enum_label(rd.VarType, item.type)
+            if item.type == rd.VarType.UInt:
+                result["values"] = list(item.value.u32v)[:count]
+            elif item.type == rd.VarType.SInt:
+                result["values"] = list(item.value.s32v)[:count]
+            else:
+                values = list(item.value.f32v)[:count]
+                result["values"] = [value if math.isfinite(value) else None for value in values]
         return result
     for stage, label in [(rd.ShaderStage.Vertex, "vertex"), (rd.ShaderStage.Pixel, "fragment")]:
         reflection = pipe.GetShaderReflection(stage)

@@ -6,6 +6,8 @@
 
 Автор работы: **Dreaaammy**. Дата отчёта: **14.10.2026**.
 
+Проверено: [реальный Vulkan replay и изменение шейдера](https://github.com/Dreaaammy/graphics-capture/actions/runs/38472500837) и [независимая Linux-пересборка PDF](https://github.com/Dreaaammy/graphics-capture/actions/workflows/check-report.yml).
+
 ![Настоящий кадр SuperTuxKart](evidence/vulkan/frame.png)
 
 ## Что выполнено
@@ -38,6 +40,7 @@
 - [constants.json](evidence/vulkan/constants.json): настоящие значения camera UBO.
 - [resource_usage.json](evidence/vulkan/resource_usage.json): история использования color/depth ресурсов.
 - [shader_experiment.json](evidence/vulkan/shader_experiment.json): затронутые события, число изменённых пикселей, хеши и проверка отката.
+- [shader_restored.png](evidence/vulkan/shader_restored.png): реальная выгрузка после отмены замены, побайтово совпадающая с исходным кадром. Replay также повторно проверил SHA-256 `.rdc` после эксперимента.
 - [Текстуры, кадры и шейдеры](evidence/vulkan/): PNG, исходные SPIR-V, `.spvasm` и человекочитаемый disassembly.
 - [Исходный захват](https://github.com/Dreaaammy/graphics-capture/releases/tag/report-v1): архив с `.rdc`, не требующий Git LFS. Его SHA-256: `ec811c7fe011a5527a58b5b83cd9e369292c85eeea36cd7d37a473873aabbbe8`.
 

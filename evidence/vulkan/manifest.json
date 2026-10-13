@@ -3154,5 +3154,6 @@
       "name": "Baked Command Buffer 4032"
     }
   ],
-  "draw_count": 116
+  "draw_count": 116,
+  "capture_unchanged_after_replay": true
 }

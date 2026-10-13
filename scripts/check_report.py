@@ -40,10 +40,8 @@ def main():
     count = sum(before[index:index + 3] != after[index:index + 3] for index in range(0, len(before), 4))
     assert count == experiment["changed_pixels"] == 207889
     assert experiment["restore_matches_original"]
-    if (DATA / "shader_restored.png").exists():
-        assert Image.open(DATA / "shader_restored.png").convert("RGBA").tobytes() == before
-    if "capture_unchanged_after_replay" in manifest:
-        assert manifest["capture_unchanged_after_replay"]
+    assert Image.open(DATA / "shader_restored.png").convert("RGBA").tobytes() == before
+    assert manifest["capture_unchanged_after_replay"]
     mesh = read("mesh.json")
     positions = [point for point in mesh["positions_clip"] if point and point[3] > 0]
     xs, ys = [point[0] / point[3] for point in positions], [point[1] / point[3] for point in positions]

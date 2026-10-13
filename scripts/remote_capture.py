@@ -14,6 +14,7 @@ import signal
 import time
 
 import renderdoc as rd
+from PIL import Image
 
 
 def action_tree(actions, structured, depth=0):
@@ -124,13 +125,6 @@ def replay_capture(path, folder):
         if not candidates:
             raise RuntimeError("No final colour backbuffer was identified")
         final = max(candidates, key=lambda texture: texture.width * texture.height)
-        save = rd.TextureSave()
-        save.resourceId = final.resourceId
-        save.destType = rd.FileType.PNG
-        save.alpha = rd.AlphaMapping.Preserve
-        saved = controller.SaveTexture(save, str(folder / "frame.png"))
-        if not saved:
-            raise RuntimeError("RenderDoc failed to export the final image")
         manifest = {
             "capture": path.name,
             "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -147,7 +141,7 @@ def replay_capture(path, folder):
         (folder / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
         with (folder / "sdk-api.txt").open("w", encoding="utf-8") as stream:
             for cls, members in [
-                (rd.ReplayController, ["GetPostVSData", "GetBufferData", "DisassembleShader",
+                (rd.ReplayController, ["GetPostVSData", "GetBufferData", "GetTextureData", "DisassembleShader",
                                       "GetDisassemblyTargets", "BuildTargetShader", "ReplaceResource",
                                       "GetPipelineState", "GetGLPipelineState", "GetVulkanPipelineState"]),
                 (rd.PipeState, ["GetShaderReflection", "GetShader", "GetOutputTargets",
@@ -157,6 +151,17 @@ def replay_capture(path, folder):
                 for member in members:
                     function = getattr(cls, member, None)
                     stream.write(f"\n{cls.__name__}.{member}\n{getattr(function, '__doc__', 'Unavailable')}\n")
+        print("READ FINAL TEXTURE:", final.resourceId, final.width, final.height,
+              final.format.Name(), final.msSamp, flush=True)
+        pixels = bytes(controller.GetTextureData(final.resourceId, rd.Subresource(0, 0, 0)))
+        print("RAW IMAGE BYTES:", len(pixels), flush=True)
+        if len(pixels) != final.width * final.height * 4:
+            raise RuntimeError("The final image is not a tightly packed 8-bit RGBA/BGRA image")
+        order = "BGRA" if final.format.bgraOrder else "RGBA"
+        image = Image.frombytes("RGBA", (final.width, final.height), pixels, "raw", order)
+        if controller.GetAPIProperties().pipelineType == rd.GraphicsAPI.OpenGL:
+            image = image.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
+        image.save(folder / "frame.png")
         print("VERIFIED:", manifest["api"], "draws:", manifest["draw_count"],
               "textures:", len(textures), "frame:", manifest["frame_number"], flush=True)
     finally:
@@ -177,7 +182,13 @@ def main():
     environment.enumerateGPUs = False
     rd.InitialiseReplay(environment, [])
     try:
-        path = capture_game(folder, args.driver)
+        if os.environ.get("REPLAY_EXISTING"):
+            paths = list(folder.glob("*.rdc"))
+            if len(paths) != 1:
+                raise RuntimeError("Expected exactly one downloaded capture")
+            path = paths[0]
+        else:
+            path = capture_game(folder, args.driver)
         replay_capture(path, folder)
     finally:
         rd.ShutdownReplay()

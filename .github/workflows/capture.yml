@@ -8,9 +8,14 @@ on:
         type: choice
         options: [gl, vulkan]
         default: gl
+      capture_run_id:
+        description: Optional earlier run with a saved game capture
+        type: string
+        default: ""
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   capture:
@@ -26,10 +31,19 @@ jobs:
       - name: Install official distribution packages
         run: |
           apt-get update -qq
-          DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=3 install -y --no-install-recommends git ca-certificates renderdoc python3-renderdoc xvfb xauth mesa-utils mesa-vulkan-drivers vulkan-tools supertuxkart spirv-tools glslang-tools
+          DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=3 install -y --no-install-recommends git ca-certificates renderdoc python3-renderdoc python3-pil xvfb xauth mesa-utils mesa-vulkan-drivers vulkan-tools supertuxkart spirv-tools glslang-tools
           dpkg-query -W renderdoc python3-renderdoc supertuxkart mesa-vulkan-drivers
       - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        if: inputs.capture_run_id != ''
+        with:
+          name: game-capture-${{ inputs.driver }}
+          path: artifacts/
+          run-id: ${{ inputs.capture_run_id }}
+          github-token: ${{ github.token }}
       - name: Capture and replay
+        env:
+          REPLAY_EXISTING: ${{ inputs.capture_run_id != '' && '1' || '' }}
         run: |
           mkdir -p artifacts
           xvfb-run -a -s '-screen 0 1280x720x24 +extension GLX +render -noreset' bash scripts/remote_capture.sh '${{ inputs.driver }}'

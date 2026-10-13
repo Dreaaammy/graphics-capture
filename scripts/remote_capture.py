@@ -166,8 +166,14 @@ def main():
     folder.mkdir(parents=True, exist_ok=True)
     for member in ("ExecuteAndInject", "CreateTargetControl", "OpenCaptureFile"):
         print(member, getattr(rd, member).__doc__, flush=True)
-    path = capture_game(folder, args.driver)
-    replay_capture(path, folder)
+    environment = rd.GlobalEnvironment()
+    environment.enumerateGPUs = False
+    rd.InitialiseReplay(environment, [])
+    try:
+        path = capture_game(folder, args.driver)
+        replay_capture(path, folder)
+    finally:
+        rd.ShutdownReplay()
 
 
 if __name__ == "__main__":

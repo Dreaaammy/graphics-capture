@@ -1,0 +1,42 @@
+SPIR-V 1.0 module, <id> bound of 30
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Fragment, main, "main", {f_uv, o_color, f_color, f_sampler_index});
+
+ExecutionMode(main, OriginUpperLeft);
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+UniformConstant SampledImage<float2D>* f_tex : [[DescriptorSet(0), Binding(0)]];
+Input float2* f_uv : [[Location(1)]];
+Output float4* o_color : [[Location(0)]];
+Input float4* f_color : [[Location(0)]];
+Input int* f_sampler_index : [[Location(2), Flat]];
+
+void main() {
+  float4* tex_color;
+  SampledImage<float2D> _14 = *f_tex;
+  float2 _18 = *f_uv;
+  float4 _19 = ImageSampleImplicitLod(_14, _18, );
+  *tex_color = _19;
+  float4 _22 = *tex_color;
+  float4 _25 = *f_color;
+  float4 _26 = _22 * _25;
+  *o_color = _26;
+  return;
+}
+
+

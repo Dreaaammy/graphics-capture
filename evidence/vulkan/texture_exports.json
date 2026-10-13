@@ -1,0 +1,51 @@
+[
+  {
+    "id": "ResourceId::3880",
+    "event": 49,
+    "file": "texture_3880.png",
+    "mip": 0,
+    "slice": 0
+  },
+  {
+    "id": "ResourceId::217",
+    "event": 49,
+    "file": "texture_217.png",
+    "mip": 0,
+    "slice": 0
+  },
+  {
+    "id": "ResourceId::2805",
+    "event": 14,
+    "file": "texture_2805.png",
+    "mip": 0,
+    "slice": 0
+  },
+  {
+    "id": "ResourceId::3595",
+    "event": 143,
+    "file": "texture_3595.png",
+    "mip": 0,
+    "slice": 0
+  },
+  {
+    "id": "ResourceId::3969",
+    "event": 166,
+    "file": "texture_3969.png",
+    "mip": 0,
+    "slice": 0
+  },
+  {
+    "id": "ResourceId::3789",
+    "event": 171,
+    "file": "texture_3789.png",
+    "mip": 0,
+    "slice": 0
+  },
+  {
+    "id": "ResourceId::3495",
+    "event": 205,
+    "file": "texture_3495.png",
+    "mip": 0,
+    "slice": 0
+  }
+]

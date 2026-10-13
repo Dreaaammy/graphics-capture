@@ -1,0 +1,54 @@
+SPIR-V 1.0 module, <id> bound of 42
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Vertex, main, "main", {f_uv, gl_VertexIndex, gl_PerVertex_var});
+
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+Output float2* f_uv : [[Location(0)]];
+Input int* gl_VertexIndex : [[BuiltIn(VertexIndex)]];
+struct gl_PerVertex : [[Block]] {
+  float4 gl_Position : [[BuiltIn(Position)]];
+  float gl_PointSize : [[BuiltIn(PointSize)]];
+  float[1] gl_ClipDistance : [[BuiltIn(ClipDistance)]];
+  float[1] gl_CullDistance : [[BuiltIn(CullDistance)]];
+}
+Output gl_PerVertex* gl_PerVertex_var;
+
+void main() {
+  int _13 = *gl_VertexIndex;
+  int _15 = _13 << 1;
+  int _17 = _15 & 2;
+  float _18 = ConvertSToF(_17);
+  int _19 = *gl_VertexIndex;
+  int _20 = _19 & 2;
+  float _21 = ConvertSToF(_20);
+  float2 _22 = CompositeConstruct({_18, _21});
+  *f_uv = _22;
+  float2 _31 = *f_uv;
+  float2 _33 = _31 * 2.0000;
+  float2 _35 = CompositeConstruct({1.0000, 1.0000});
+  float2 _36 = _33 - _35;
+  float _37 = _36.x;
+  float _38 = _36.y;
+  float4 _39 = CompositeConstruct({_37, _38, 1.0000, 1.0000});
+  float4* _41 = &gl_PerVertex_var.gl_Position;
+  *_41 = _39;
+  return;
+}
+
+

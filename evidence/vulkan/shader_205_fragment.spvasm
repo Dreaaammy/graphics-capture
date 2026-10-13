@@ -1,0 +1,109 @@
+; SPIR-V
+; Version: 1.0
+; Generator: Google Shaderc over Glslang; 11
+; Bound: 72
+; Schema: 0
+               OpCapability Shader
+          %1 = OpExtInstImport "GLSL.std.450"
+               OpMemoryModel Logical GLSL450
+               OpEntryPoint Fragment %main "main" %f_uv %o_color
+               OpExecutionMode %main OriginUpperLeft
+               OpSource GLSL 450
+               OpSourceExtension "GL_GOOGLE_cpp_style_line_directive"
+               OpSourceExtension "GL_GOOGLE_include_directive"
+               OpName %main "main"
+               OpName %uv "uv"
+               OpName %f_uv "f_uv"
+               OpName %front "front"
+               OpName %Constants "Constants"
+               OpMemberName %Constants 0 "m_inverse_projection_view_matrix"
+               OpName %u_push_constants "u_push_constants"
+               OpName %back "back"
+               OpName %dir "dir"
+               OpName %o_color "o_color"
+               OpName %f_skybox_texture "f_skybox_texture"
+               OpDecorate %f_uv Location 0
+               OpMemberDecorate %Constants 0 ColMajor
+               OpMemberDecorate %Constants 0 Offset 0
+               OpMemberDecorate %Constants 0 MatrixStride 16
+               OpDecorate %Constants Block
+               OpDecorate %o_color Location 0
+               OpDecorate %f_skybox_texture DescriptorSet 0
+               OpDecorate %f_skybox_texture Binding 0
+       %void = OpTypeVoid
+          %3 = OpTypeFunction %void
+      %float = OpTypeFloat 32
+    %v2float = OpTypeVector %float 2
+%_ptr_Function_v2float = OpTypePointer Function %v2float
+    %float_2 = OpConstant %float 2
+%_ptr_Input_v2float = OpTypePointer Input %v2float
+       %f_uv = OpVariable %_ptr_Input_v2float Input
+    %float_1 = OpConstant %float 1
+    %v4float = OpTypeVector %float 4
+%_ptr_Function_v4float = OpTypePointer Function %v4float
+%mat4v4float = OpTypeMatrix %v4float 4
+  %Constants = OpTypeStruct %mat4v4float
+%_ptr_PushConstant_Constants = OpTypePointer PushConstant %Constants
+%u_push_constants = OpVariable %_ptr_PushConstant_Constants PushConstant
+        %int = OpTypeInt 32 1
+      %int_0 = OpConstant %int 0
+%_ptr_PushConstant_mat4v4float = OpTypePointer PushConstant %mat4v4float
+   %float_n1 = OpConstant %float -1
+    %v3float = OpTypeVector %float 3
+%_ptr_Function_v3float = OpTypePointer Function %v3float
+       %uint = OpTypeInt 32 0
+     %uint_3 = OpConstant %uint 3
+%_ptr_Function_float = OpTypePointer Function %float
+%_ptr_Output_v4float = OpTypePointer Output %v4float
+    %o_color = OpVariable %_ptr_Output_v4float Output
+         %65 = OpTypeImage %float Cube 0 0 0 1 Unknown
+         %66 = OpTypeSampledImage %65
+%_ptr_UniformConstant_66 = OpTypePointer UniformConstant %66
+%f_skybox_texture = OpVariable %_ptr_UniformConstant_66 UniformConstant
+       %main = OpFunction %void None %3
+          %5 = OpLabel
+         %uv = OpVariable %_ptr_Function_v2float Function
+      %front = OpVariable %_ptr_Function_v4float Function
+       %back = OpVariable %_ptr_Function_v4float Function
+        %dir = OpVariable %_ptr_Function_v3float Function
+         %13 = OpLoad %v2float %f_uv
+         %14 = OpVectorTimesScalar %v2float %13 %float_2
+         %16 = OpCompositeConstruct %v2float %float_1 %float_1
+         %17 = OpFSub %v2float %14 %16
+               OpStore %uv %17
+         %28 = OpAccessChain %_ptr_PushConstant_mat4v4float %u_push_constants %int_0
+         %29 = OpLoad %mat4v4float %28
+         %30 = OpLoad %v2float %uv
+         %32 = OpCompositeExtract %float %30 0
+         %33 = OpCompositeExtract %float %30 1
+         %34 = OpCompositeConstruct %v4float %32 %33 %float_n1 %float_1
+         %35 = OpMatrixTimesVector %v4float %29 %34
+               OpStore %front %35
+         %37 = OpAccessChain %_ptr_PushConstant_mat4v4float %u_push_constants %int_0
+         %38 = OpLoad %mat4v4float %37
+         %39 = OpLoad %v2float %uv
+         %40 = OpCompositeExtract %float %39 0
+         %41 = OpCompositeExtract %float %39 1
+         %42 = OpCompositeConstruct %v4float %40 %41 %float_1 %float_1
+         %43 = OpMatrixTimesVector %v4float %38 %42
+               OpStore %back %43
+         %47 = OpLoad %v4float %back
+         %48 = OpVectorShuffle %v3float %47 %47 0 1 2
+         %52 = OpAccessChain %_ptr_Function_float %back %uint_3
+         %53 = OpLoad %float %52
+         %54 = OpCompositeConstruct %v3float %53 %53 %53
+         %55 = OpFDiv %v3float %48 %54
+         %56 = OpLoad %v4float %front
+         %57 = OpVectorShuffle %v3float %56 %56 0 1 2
+         %58 = OpAccessChain %_ptr_Function_float %front %uint_3
+         %59 = OpLoad %float %58
+         %60 = OpCompositeConstruct %v3float %59 %59 %59
+         %61 = OpFDiv %v3float %57 %60
+         %62 = OpFSub %v3float %55 %61
+               OpStore %dir %62
+         %69 = OpLoad %66 %f_skybox_texture
+         %70 = OpLoad %v3float %dir
+         %71 = OpImageSampleImplicitLod %v4float %69 %70
+               OpStore %o_color %71
+               OpReturn
+               OpFunctionEnd

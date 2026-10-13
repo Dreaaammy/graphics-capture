@@ -1,0 +1,54 @@
+SPIR-V 1.0 module, <id> bound of 41
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Vertex, main, "main", {gl_PerVertex_var, v_position, f_color, v_color, f_uv, v_uv, f_sampler_index, v_sampler_index});
+
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+struct gl_PerVertex : [[Block]] {
+  float4 gl_Position : [[BuiltIn(Position)]];
+  float gl_PointSize : [[BuiltIn(PointSize)]];
+  float[1] gl_ClipDistance : [[BuiltIn(ClipDistance)]];
+  float[1] gl_CullDistance : [[BuiltIn(CullDistance)]];
+}
+Output gl_PerVertex* gl_PerVertex_var;
+Input float2* v_position : [[Location(0)]];
+Output float4* f_color : [[Location(0)]];
+Input float4* v_color : [[Location(1)]];
+Output float2* f_uv : [[Location(1)]];
+Input float2* v_uv : [[Location(2)]];
+Output int* f_sampler_index : [[Location(2), Flat]];
+Input int* v_sampler_index : [[Location(3)]];
+
+void main() {
+  float2 _19 = *v_position;
+  float _22 = _19.x;
+  float _23 = _19.y;
+  float4 _24 = CompositeConstruct({_22, _23, 0.0000, 1.0000});
+  float4* _26 = &gl_PerVertex_var.gl_Position;
+  *_26 = _24;
+  float4 _30 = *v_color;
+  float4 _31 = _30.zyxw;
+  *f_color = _31;
+  float2 _35 = *v_uv;
+  *f_uv = _35;
+  int _40 = *v_sampler_index;
+  *f_sampler_index = _40;
+  return;
+}
+
+

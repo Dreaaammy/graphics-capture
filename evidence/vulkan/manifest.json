@@ -1,0 +1,3158 @@
+{
+  "capture": "race_frame80.rdc",
+  "sha256": "ec811c7fe011a5527a58b5b83cd9e369292c85eeea36cd7d37a473873aabbbe8",
+  "api": "Vulkan",
+  "frame_number": 80,
+  "final_image": "ResourceId::129",
+  "actions": [
+    {
+      "event": 5,
+      "name": "=> vkQueueSubmit(1)[0]: vkBeginCommandBuffer(ResourceId::4032)",
+      "flags": 20975616,
+      "indices": 0,
+      "instances": 0,
+      "depth": 0
+    },
+    {
+      "event": 6,
+      "name": "vkCmdBeginRenderPass(C=Clear, D=Clear)",
+      "flags": 4198400,
+      "indices": 0,
+      "instances": 0,
+      "depth": 0
+    },
+    {
+      "event": 14,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 18,
+      "instances": 2,
+      "depth": 0
+    },
+    {
+      "event": 16,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 17,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 18,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 18,
+      "instances": 2,
+      "depth": 0
+    },
+    {
+      "event": 19,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 12,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 21,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 12,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 23,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 4128,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 24,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 4128,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 25,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 4128,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 26,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 4128,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 28,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1152,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 29,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1152,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 30,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1200,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 31,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1200,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 33,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1824,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 34,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1824,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 35,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1824,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 36,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1824,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 38,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 315,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 39,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 315,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 40,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 315,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 41,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 315,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 43,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 252,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 45,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 228,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 47,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 162,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 49,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 37974,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 51,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 12,
+      "instances": 4,
+      "depth": 0
+    },
+    {
+      "event": 52,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 120,
+      "instances": 14,
+      "depth": 0
+    },
+    {
+      "event": 54,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 360,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 56,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 60,
+      "instances": 4,
+      "depth": 0
+    },
+    {
+      "event": 58,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 210,
+      "instances": 4,
+      "depth": 0
+    },
+    {
+      "event": 60,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 4362,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 62,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 222,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 64,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 108,
+      "instances": 4,
+      "depth": 0
+    },
+    {
+      "event": 65,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 504,
+      "instances": 14,
+      "depth": 0
+    },
+    {
+      "event": 67,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1992,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 69,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 324,
+      "instances": 2,
+      "depth": 0
+    },
+    {
+      "event": 70,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 288,
+      "instances": 5,
+      "depth": 0
+    },
+    {
+      "event": 72,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 180,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 74,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6114,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 76,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 5790,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 78,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 4680,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 80,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 2172,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 82,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 864,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 83,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 5898,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 85,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 3024,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 87,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 7392,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 89,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 3198,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 91,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1680,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 93,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 4476,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 95,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1530,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 96,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 24108,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 98,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 864,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 101,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 18,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 102,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 18,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 104,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 106,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1728,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 108,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 12,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 110,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 240,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 112,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 3192,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 114,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 528,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 116,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6144,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 118,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 786,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 120,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 1296,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 122,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 13248,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 124,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 2196,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 126,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 8268,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 128,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 30,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 130,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 2046,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 132,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 4062,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 134,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6411,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 136,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 2772,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 138,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6258,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 140,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 12900,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 143,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 360,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 145,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 5220,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 146,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 528,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 148,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 2760,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 152,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 480,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 154,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 126,
+      "instances": 5,
+      "depth": 0
+    },
+    {
+      "event": 155,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 72,
+      "instances": 8,
+      "depth": 0
+    },
+    {
+      "event": 157,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 540,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 159,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 261,
+      "instances": 13,
+      "depth": 0
+    },
+    {
+      "event": 161,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 8100,
+      "instances": 3,
+      "depth": 0
+    },
+    {
+      "event": 162,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 3240,
+      "instances": 5,
+      "depth": 0
+    },
+    {
+      "event": 166,
+      "name": "vkCmdDraw()",
+      "flags": 131074,
+      "indices": 3,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 171,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 144,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 173,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 96,
+      "depth": 0
+    },
+    {
+      "event": 175,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 384,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 177,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 720,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 180,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 12,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 182,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 60,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 184,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 66,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 187,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 96,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 188,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 96,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 189,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 96,
+      "instances": 2,
+      "depth": 0
+    },
+    {
+      "event": 190,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 192,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 192,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 288,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 195,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 180,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 197,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 324,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 198,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 324,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 205,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 208,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 211,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 12,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 214,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 217,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 816,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 220,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 223,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 226,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 229,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 232,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 235,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 238,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 241,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 244,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 6,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 247,
+      "name": "vkCmdDrawIndexed()",
+      "flags": 196610,
+      "indices": 918,
+      "instances": 1,
+      "depth": 0
+    },
+    {
+      "event": 248,
+      "name": "vkCmdEndRenderPass(C=Store, D=Don't Care)",
+      "flags": 8392704,
+      "indices": 0,
+      "instances": 0,
+      "depth": 0
+    },
+    {
+      "event": 249,
+      "name": "=> vkQueueSubmit(1)[0]: vkEndCommandBuffer(ResourceId::4032)",
+      "flags": 25169920,
+      "indices": 0,
+      "instances": 0,
+      "depth": 0
+    },
+    {
+      "event": 250,
+      "name": "vkQueuePresentKHR(ResourceId::129)",
+      "flags": 128,
+      "indices": 0,
+      "instances": 0,
+      "depth": 0
+    }
+  ],
+  "textures": [
+    {
+      "id": "ResourceId::129",
+      "name": "Swapchain Image 129",
+      "width": 960,
+      "height": 540,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 1,
+      "samples": 1,
+      "format": "B8G8R8A8_UNORM",
+      "creation_flags": 19
+    },
+    {
+      "id": "ResourceId::130",
+      "name": "Swapchain Image 130",
+      "width": 960,
+      "height": 540,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 1,
+      "samples": 1,
+      "format": "B8G8R8A8_UNORM",
+      "creation_flags": 19
+    },
+    {
+      "id": "ResourceId::131",
+      "name": "Swapchain Image 131",
+      "width": 960,
+      "height": 540,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 1,
+      "samples": 1,
+      "format": "B8G8R8A8_UNORM",
+      "creation_flags": 19
+    },
+    {
+      "id": "ResourceId::132",
+      "name": "Swapchain Image 132",
+      "width": 960,
+      "height": 540,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 1,
+      "samples": 1,
+      "format": "B8G8R8A8_UNORM",
+      "creation_flags": 19
+    },
+    {
+      "id": "ResourceId::157",
+      "name": "2D Depth Attachment 157",
+      "width": 960,
+      "height": 540,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 1,
+      "samples": 1,
+      "format": "D32",
+      "creation_flags": 4
+    },
+    {
+      "id": "ResourceId::211",
+      "name": "2D Image 211",
+      "width": 2,
+      "height": 2,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 1,
+      "samples": 1,
+      "format": "R8G8B8A8_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::217",
+      "name": "2D Image 217",
+      "width": 2,
+      "height": 2,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 1,
+      "samples": 1,
+      "format": "R8G8B8A8_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2404",
+      "name": "2D Image 2404",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "R8_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2761",
+      "name": "2D Image 2761",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2792",
+      "name": "2D Image 2792",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2805",
+      "name": "2D Image 2805",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2812",
+      "name": "2D Image 2812",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2831",
+      "name": "2D Image 2831",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2851",
+      "name": "2D Image 2851",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2909",
+      "name": "2D Image 2909",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2923",
+      "name": "2D Image 2923",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2930",
+      "name": "2D Image 2930",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::2935",
+      "name": "2D Image 2935",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3012",
+      "name": "2D Image 3012",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3045",
+      "name": "2D Image 3045",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3050",
+      "name": "2D Image 3050",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3057",
+      "name": "2D Image 3057",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3159",
+      "name": "2D Image 3159",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3177",
+      "name": "2D Image 3177",
+      "width": 512,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3249",
+      "name": "2D Image 3249",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3327",
+      "name": "2D Image 3327",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3347",
+      "name": "2D Image 3347",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3353",
+      "name": "2D Image 3353",
+      "width": 64,
+      "height": 64,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 7,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3359",
+      "name": "2D Image 3359",
+      "width": 32,
+      "height": 32,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 6,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3364",
+      "name": "2D Image 3364",
+      "width": 64,
+      "height": 64,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 7,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3372",
+      "name": "2D Image 3372",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3377",
+      "name": "2D Image 3377",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3384",
+      "name": "2D Image 3384",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3390",
+      "name": "2D Image 3390",
+      "width": 16,
+      "height": 16,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 5,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3395",
+      "name": "2D Color Attachment 3395",
+      "width": 404,
+      "height": 404,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 1,
+      "samples": 1,
+      "format": "R8G8B8A8_UNORM",
+      "creation_flags": 3
+    },
+    {
+      "id": "ResourceId::3417",
+      "name": "2D Image 3417",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3432",
+      "name": "2D Image 3432",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3438",
+      "name": "2D Image 3438",
+      "width": 64,
+      "height": 64,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 7,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3454",
+      "name": "2D Image 3454",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3471",
+      "name": "2D Image 3471",
+      "width": 849,
+      "height": 341,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3495",
+      "name": "2D Image 3495",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3501",
+      "name": "2D Image 3501",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3514",
+      "name": "2D Image 3514",
+      "width": 1024,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3526",
+      "name": "2D Image 3526",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3571",
+      "name": "2D Image 3571",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3576",
+      "name": "2D Image 3576",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3581",
+      "name": "2D Image 3581",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3595",
+      "name": "2D Image 3595",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3607",
+      "name": "2D Image 3607",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3613",
+      "name": "2D Image 3613",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3619",
+      "name": "2D Image 3619",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3625",
+      "name": "2D Image 3625",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3631",
+      "name": "2D Image 3631",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3637",
+      "name": "2D Image 3637",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3643",
+      "name": "2D Image 3643",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3648",
+      "name": "2D Image 3648",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3655",
+      "name": "2D Image 3655",
+      "width": 256,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3661",
+      "name": "2D Image 3661",
+      "width": 512,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3667",
+      "name": "2D Image 3667",
+      "width": 256,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3673",
+      "name": "2D Image 3673",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3679",
+      "name": "2D Image 3679",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3685",
+      "name": "2D Image 3685",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3691",
+      "name": "2D Image 3691",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3697",
+      "name": "2D Image 3697",
+      "width": 256,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 9,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3703",
+      "name": "2D Image 3703",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3709",
+      "name": "2D Image 3709",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3715",
+      "name": "2D Image 3715",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3727",
+      "name": "2D Image 3727",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3733",
+      "name": "2D Image 3733",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3739",
+      "name": "2D Image 3739",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3745",
+      "name": "2D Image 3745",
+      "width": 128,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 8,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3754",
+      "name": "2D Image 3754",
+      "width": 512,
+      "height": 256,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3777",
+      "name": "2D Image 3777",
+      "width": 512,
+      "height": 128,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3789",
+      "name": "2D Image 3789",
+      "width": 16,
+      "height": 16,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 5,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3812",
+      "name": "2D Image 3812",
+      "width": 128,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3856",
+      "name": "2D Image 3856",
+      "width": 512,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3868",
+      "name": "2D Image 3868",
+      "width": 256,
+      "height": 512,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 10,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3880",
+      "name": "2D Image 3880",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3892",
+      "name": "2D Image 3892",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3946",
+      "name": "2D Image 3946",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3952",
+      "name": "2D Image 3952",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3958",
+      "name": "2D Image 3958",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 1,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    },
+    {
+      "id": "ResourceId::3969",
+      "name": "2D Array Image 3969",
+      "width": 1024,
+      "height": 1024,
+      "depth": 1,
+      "array_size": 6,
+      "mips": 11,
+      "samples": 1,
+      "format": "BC3_UNORM",
+      "creation_flags": 1
+    }
+  ],
+  "resources": [
+    {
+      "id": "ResourceId::7",
+      "name": "Instance 7"
+    },
+    {
+      "id": "ResourceId::9",
+      "name": "Physical Device 9"
+    },
+    {
+      "id": "ResourceId::10",
+      "name": "Device 10"
+    },
+    {
+      "id": "ResourceId::126",
+      "name": "Queue 126"
+    },
+    {
+      "id": "ResourceId::127",
+      "name": "Swapchain 127"
+    },
+    {
+      "id": "ResourceId::129",
+      "name": "Swapchain Image 129"
+    },
+    {
+      "id": "ResourceId::130",
+      "name": "Swapchain Image 130"
+    },
+    {
+      "id": "ResourceId::131",
+      "name": "Swapchain Image 131"
+    },
+    {
+      "id": "ResourceId::132",
+      "name": "Swapchain Image 132"
+    },
+    {
+      "id": "ResourceId::153",
+      "name": "Image View 153"
+    },
+    {
+      "id": "ResourceId::157",
+      "name": "2D Depth Attachment 157"
+    },
+    {
+      "id": "ResourceId::158",
+      "name": "Memory 158"
+    },
+    {
+      "id": "ResourceId::160",
+      "name": "Image View 160"
+    },
+    {
+      "id": "ResourceId::161",
+      "name": "Semaphore 161"
+    },
+    {
+      "id": "ResourceId::162",
+      "name": "Semaphore 162"
+    },
+    {
+      "id": "ResourceId::163",
+      "name": "Fence 163"
+    },
+    {
+      "id": "ResourceId::168",
+      "name": "Sampler 168"
+    },
+    {
+      "id": "ResourceId::170",
+      "name": "Sampler 170"
+    },
+    {
+      "id": "ResourceId::172",
+      "name": "Sampler 172"
+    },
+    {
+      "id": "ResourceId::173",
+      "name": "Render Pass 173"
+    },
+    {
+      "id": "ResourceId::174",
+      "name": "Framebuffer 174"
+    },
+    {
+      "id": "ResourceId::192",
+      "name": "Command Pool 192"
+    },
+    {
+      "id": "ResourceId::193",
+      "name": "Command Buffer 193"
+    },
+    {
+      "id": "ResourceId::198",
+      "name": "Shader Module 198"
+    },
+    {
+      "id": "ResourceId::199",
+      "name": "Shader Module 199"
+    },
+    {
+      "id": "ResourceId::200",
+      "name": "Shader Module 200"
+    },
+    {
+      "id": "ResourceId::202",
+      "name": "Shader Module 202"
+    },
+    {
+      "id": "ResourceId::204",
+      "name": "Shader Module 204"
+    },
+    {
+      "id": "ResourceId::205",
+      "name": "Shader Module 205"
+    },
+    {
+      "id": "ResourceId::206",
+      "name": "Shader Module 206"
+    },
+    {
+      "id": "ResourceId::207",
+      "name": "Shader Module 207"
+    },
+    {
+      "id": "ResourceId::208",
+      "name": "Shader Module 208"
+    },
+    {
+      "id": "ResourceId::209",
+      "name": "Shader Module 209"
+    },
+    {
+      "id": "ResourceId::211",
+      "name": "2D Image 211"
+    },
+    {
+      "id": "ResourceId::215",
+      "name": "Image View 215"
+    },
+    {
+      "id": "ResourceId::217",
+      "name": "2D Image 217"
+    },
+    {
+      "id": "ResourceId::221",
+      "name": "Image View 221"
+    },
+    {
+      "id": "ResourceId::222",
+      "name": "Descriptor Layout 222"
+    },
+    {
+      "id": "ResourceId::223",
+      "name": "Descriptor Pool 223"
+    },
+    {
+      "id": "ResourceId::227",
+      "name": "Descriptor Set 227"
+    },
+    {
+      "id": "ResourceId::228",
+      "name": "Descriptor Set 228"
+    },
+    {
+      "id": "ResourceId::229",
+      "name": "Descriptor Set 229"
+    },
+    {
+      "id": "ResourceId::230",
+      "name": "Descriptor Set 230"
+    },
+    {
+      "id": "ResourceId::231",
+      "name": "Descriptor Set 231"
+    },
+    {
+      "id": "ResourceId::232",
+      "name": "Descriptor Set 232"
+    },
+    {
+      "id": "ResourceId::233",
+      "name": "Descriptor Set 233"
+    },
+    {
+      "id": "ResourceId::234",
+      "name": "Descriptor Set 234"
+    },
+    {
+      "id": "ResourceId::235",
+      "name": "Descriptor Set 235"
+    },
+    {
+      "id": "ResourceId::236",
+      "name": "Descriptor Set 236"
+    },
+    {
+      "id": "ResourceId::237",
+      "name": "Descriptor Set 237"
+    },
+    {
+      "id": "ResourceId::736",
+      "name": "Pipeline Layout 736"
+    },
+    {
+      "id": "ResourceId::737",
+      "name": "Graphics Pipeline 737"
+    },
+    {
+      "id": "ResourceId::740",
+      "name": "Descriptor Layout 740"
+    },
+    {
+      "id": "ResourceId::741",
+      "name": "Descriptor Pool 741"
+    },
+    {
+      "id": "ResourceId::742",
+      "name": "Descriptor Set 742"
+    },
+    {
+      "id": "ResourceId::743",
+      "name": "Descriptor Set 743"
+    },
+    {
+      "id": "ResourceId::744",
+      "name": "Descriptor Set 744"
+    },
+    {
+      "id": "ResourceId::745",
+      "name": "Descriptor Set 745"
+    },
+    {
+      "id": "ResourceId::746",
+      "name": "Descriptor Set 746"
+    },
+    {
+      "id": "ResourceId::747",
+      "name": "Descriptor Set 747"
+    },
+    {
+      "id": "ResourceId::748",
+      "name": "Descriptor Set 748"
+    },
+    {
+      "id": "ResourceId::749",
+      "name": "Descriptor Set 749"
+    },
+    {
+      "id": "ResourceId::750",
+      "name": "Descriptor Set 750"
+    },
+    {
+      "id": "ResourceId::751",
+      "name": "Descriptor Set 751"
+    },
+    {
+      "id": "ResourceId::752",
+      "name": "Descriptor Set 752"
+    },
+    {
+      "id": "ResourceId::753",
+      "name": "Descriptor Set 753"
+    },
+    {
+      "id": "ResourceId::754",
+      "name": "Descriptor Set 754"
+    },
+    {
+      "id": "ResourceId::755",
+      "name": "Descriptor Set 755"
+    },
+    {
+      "id": "ResourceId::757",
+      "name": "Descriptor Set 757"
+    },
+    {
+      "id": "ResourceId::758",
+      "name": "Descriptor Set 758"
+    },
+    {
+      "id": "ResourceId::759",
+      "name": "Descriptor Set 759"
+    },
+    {
+      "id": "ResourceId::760",
+      "name": "Descriptor Set 760"
+    },
+    {
+      "id": "ResourceId::761",
+      "name": "Descriptor Set 761"
+    },
+    {
+      "id": "ResourceId::763",
+      "name": "Descriptor Set 763"
+    },
+    {
+      "id": "ResourceId::764",
+      "name": "Descriptor Set 764"
+    },
+    {
+      "id": "ResourceId::765",
+      "name": "Descriptor Set 765"
+    },
+    {
+      "id": "ResourceId::766",
+      "name": "Descriptor Set 766"
+    },
+    {
+      "id": "ResourceId::769",
+      "name": "Descriptor Set 769"
+    },
+    {
+      "id": "ResourceId::770",
+      "name": "Descriptor Set 770"
+    },
+    {
+      "id": "ResourceId::771",
+      "name": "Descriptor Set 771"
+    },
+    {
+      "id": "ResourceId::772",
+      "name": "Descriptor Set 772"
+    },
+    {
+      "id": "ResourceId::773",
+      "name": "Descriptor Set 773"
+    },
+    {
+      "id": "ResourceId::774",
+      "name": "Descriptor Set 774"
+    },
+    {
+      "id": "ResourceId::775",
+      "name": "Descriptor Set 775"
+    },
+    {
+      "id": "ResourceId::776",
+      "name": "Descriptor Set 776"
+    },
+    {
+      "id": "ResourceId::777",
+      "name": "Descriptor Set 777"
+    },
+    {
+      "id": "ResourceId::778",
+      "name": "Descriptor Set 778"
+    },
+    {
+      "id": "ResourceId::779",
+      "name": "Descriptor Set 779"
+    },
+    {
+      "id": "ResourceId::781",
+      "name": "Descriptor Set 781"
+    },
+    {
+      "id": "ResourceId::783",
+      "name": "Descriptor Set 783"
+    },
+    {
+      "id": "ResourceId::784",
+      "name": "Descriptor Set 784"
+    },
+    {
+      "id": "ResourceId::785",
+      "name": "Descriptor Set 785"
+    },
+    {
+      "id": "ResourceId::787",
+      "name": "Descriptor Set 787"
+    },
+    {
+      "id": "ResourceId::790",
+      "name": "Descriptor Set 790"
+    },
+    {
+      "id": "ResourceId::791",
+      "name": "Descriptor Set 791"
+    },
+    {
+      "id": "ResourceId::792",
+      "name": "Descriptor Set 792"
+    },
+    {
+      "id": "ResourceId::793",
+      "name": "Descriptor Set 793"
+    },
+    {
+      "id": "ResourceId::795",
+      "name": "Descriptor Set 795"
+    },
+    {
+      "id": "ResourceId::797",
+      "name": "Descriptor Set 797"
+    },
+    {
+      "id": "ResourceId::798",
+      "name": "Descriptor Set 798"
+    },
+    {
+      "id": "ResourceId::799",
+      "name": "Descriptor Set 799"
+    },
+    {
+      "id": "ResourceId::800",
+      "name": "Descriptor Set 800"
+    },
+    {
+      "id": "ResourceId::801",
+      "name": "Descriptor Set 801"
+    },
+    {
+      "id": "ResourceId::802",
+      "name": "Descriptor Set 802"
+    },
+    {
+      "id": "ResourceId::803",
+      "name": "Descriptor Set 803"
+    },
+    {
+      "id": "ResourceId::804",
+      "name": "Descriptor Set 804"
+    },
+    {
+      "id": "ResourceId::805",
+      "name": "Descriptor Set 805"
+    },
+    {
+      "id": "ResourceId::806",
+      "name": "Descriptor Set 806"
+    },
+    {
+      "id": "ResourceId::807",
+      "name": "Descriptor Set 807"
+    },
+    {
+      "id": "ResourceId::808",
+      "name": "Descriptor Set 808"
+    },
+    {
+      "id": "ResourceId::809",
+      "name": "Descriptor Set 809"
+    },
+    {
+      "id": "ResourceId::810",
+      "name": "Descriptor Set 810"
+    },
+    {
+      "id": "ResourceId::811",
+      "name": "Descriptor Set 811"
+    },
+    {
+      "id": "ResourceId::812",
+      "name": "Descriptor Set 812"
+    },
+    {
+      "id": "ResourceId::813",
+      "name": "Descriptor Set 813"
+    },
+    {
+      "id": "ResourceId::814",
+      "name": "Descriptor Set 814"
+    },
+    {
+      "id": "ResourceId::815",
+      "name": "Descriptor Set 815"
+    },
+    {
+      "id": "ResourceId::816",
+      "name": "Descriptor Set 816"
+    },
+    {
+      "id": "ResourceId::817",
+      "name": "Descriptor Set 817"
+    },
+    {
+      "id": "ResourceId::2404",
+      "name": "2D Image 2404"
+    },
+    {
+      "id": "ResourceId::2408",
+      "name": "Image View 2408"
+    },
+    {
+      "id": "ResourceId::2721",
+      "name": "Buffer 2721"
+    },
+    {
+      "id": "ResourceId::2761",
+      "name": "2D Image 2761"
+    },
+    {
+      "id": "ResourceId::2765",
+      "name": "Image View 2765"
+    },
+    {
+      "id": "ResourceId::2792",
+      "name": "2D Image 2792"
+    },
+    {
+      "id": "ResourceId::2796",
+      "name": "Image View 2796"
+    },
+    {
+      "id": "ResourceId::2805",
+      "name": "2D Image 2805"
+    },
+    {
+      "id": "ResourceId::2810",
+      "name": "Image View 2810"
+    },
+    {
+      "id": "ResourceId::2812",
+      "name": "2D Image 2812"
+    },
+    {
+      "id": "ResourceId::2821",
+      "name": "Image View 2821"
+    },
+    {
+      "id": "ResourceId::2831",
+      "name": "2D Image 2831"
+    },
+    {
+      "id": "ResourceId::2835",
+      "name": "Image View 2835"
+    },
+    {
+      "id": "ResourceId::2851",
+      "name": "2D Image 2851"
+    },
+    {
+      "id": "ResourceId::2855",
+      "name": "Image View 2855"
+    },
+    {
+      "id": "ResourceId::2909",
+      "name": "2D Image 2909"
+    },
+    {
+      "id": "ResourceId::2913",
+      "name": "Image View 2913"
+    },
+    {
+      "id": "ResourceId::2916",
+      "name": "Memory 2916"
+    },
+    {
+      "id": "ResourceId::2923",
+      "name": "2D Image 2923"
+    },
+    {
+      "id": "ResourceId::2927",
+      "name": "Image View 2927"
+    },
+    {
+      "id": "ResourceId::2930",
+      "name": "2D Image 2930"
+    },
+    {
+      "id": "ResourceId::2935",
+      "name": "2D Image 2935"
+    },
+    {
+      "id": "ResourceId::2939",
+      "name": "Image View 2939"
+    },
+    {
+      "id": "ResourceId::2940",
+      "name": "Image View 2940"
+    },
+    {
+      "id": "ResourceId::3012",
+      "name": "2D Image 3012"
+    },
+    {
+      "id": "ResourceId::3016",
+      "name": "Image View 3016"
+    },
+    {
+      "id": "ResourceId::3045",
+      "name": "2D Image 3045"
+    },
+    {
+      "id": "ResourceId::3050",
+      "name": "2D Image 3050"
+    },
+    {
+      "id": "ResourceId::3054",
+      "name": "Image View 3054"
+    },
+    {
+      "id": "ResourceId::3055",
+      "name": "Image View 3055"
+    },
+    {
+      "id": "ResourceId::3057",
+      "name": "2D Image 3057"
+    },
+    {
+      "id": "ResourceId::3061",
+      "name": "Image View 3061"
+    },
+    {
+      "id": "ResourceId::3159",
+      "name": "2D Image 3159"
+    },
+    {
+      "id": "ResourceId::3163",
+      "name": "Image View 3163"
+    },
+    {
+      "id": "ResourceId::3177",
+      "name": "2D Image 3177"
+    },
+    {
+      "id": "ResourceId::3181",
+      "name": "Image View 3181"
+    },
+    {
+      "id": "ResourceId::3249",
+      "name": "2D Image 3249"
+    },
+    {
+      "id": "ResourceId::3253",
+      "name": "Image View 3253"
+    },
+    {
+      "id": "ResourceId::3327",
+      "name": "2D Image 3327"
+    },
+    {
+      "id": "ResourceId::3331",
+      "name": "Image View 3331"
+    },
+    {
+      "id": "ResourceId::3347",
+      "name": "2D Image 3347"
+    },
+    {
+      "id": "ResourceId::3351",
+      "name": "Image View 3351"
+    },
+    {
+      "id": "ResourceId::3353",
+      "name": "2D Image 3353"
+    },
+    {
+      "id": "ResourceId::3357",
+      "name": "Image View 3357"
+    },
+    {
+      "id": "ResourceId::3359",
+      "name": "2D Image 3359"
+    },
+    {
+      "id": "ResourceId::3364",
+      "name": "2D Image 3364"
+    },
+    {
+      "id": "ResourceId::3368",
+      "name": "Image View 3368"
+    },
+    {
+      "id": "ResourceId::3369",
+      "name": "Image View 3369"
+    },
+    {
+      "id": "ResourceId::3372",
+      "name": "2D Image 3372"
+    },
+    {
+      "id": "ResourceId::3377",
+      "name": "2D Image 3377"
+    },
+    {
+      "id": "ResourceId::3381",
+      "name": "Image View 3381"
+    },
+    {
+      "id": "ResourceId::3382",
+      "name": "Image View 3382"
+    },
+    {
+      "id": "ResourceId::3384",
+      "name": "2D Image 3384"
+    },
+    {
+      "id": "ResourceId::3388",
+      "name": "Image View 3388"
+    },
+    {
+      "id": "ResourceId::3390",
+      "name": "2D Image 3390"
+    },
+    {
+      "id": "ResourceId::3394",
+      "name": "Image View 3394"
+    },
+    {
+      "id": "ResourceId::3395",
+      "name": "2D Color Attachment 3395"
+    },
+    {
+      "id": "ResourceId::3396",
+      "name": "Image View 3396"
+    },
+    {
+      "id": "ResourceId::3417",
+      "name": "2D Image 3417"
+    },
+    {
+      "id": "ResourceId::3421",
+      "name": "Image View 3421"
+    },
+    {
+      "id": "ResourceId::3432",
+      "name": "2D Image 3432"
+    },
+    {
+      "id": "ResourceId::3436",
+      "name": "Image View 3436"
+    },
+    {
+      "id": "ResourceId::3438",
+      "name": "2D Image 3438"
+    },
+    {
+      "id": "ResourceId::3443",
+      "name": "Image View 3443"
+    },
+    {
+      "id": "ResourceId::3454",
+      "name": "2D Image 3454"
+    },
+    {
+      "id": "ResourceId::3458",
+      "name": "Image View 3458"
+    },
+    {
+      "id": "ResourceId::3471",
+      "name": "2D Image 3471"
+    },
+    {
+      "id": "ResourceId::3476",
+      "name": "Image View 3476"
+    },
+    {
+      "id": "ResourceId::3495",
+      "name": "2D Image 3495"
+    },
+    {
+      "id": "ResourceId::3499",
+      "name": "Image View 3499"
+    },
+    {
+      "id": "ResourceId::3501",
+      "name": "2D Image 3501"
+    },
+    {
+      "id": "ResourceId::3506",
+      "name": "Image View 3506"
+    },
+    {
+      "id": "ResourceId::3514",
+      "name": "2D Image 3514"
+    },
+    {
+      "id": "ResourceId::3518",
+      "name": "Image View 3518"
+    },
+    {
+      "id": "ResourceId::3526",
+      "name": "2D Image 3526"
+    },
+    {
+      "id": "ResourceId::3530",
+      "name": "Image View 3530"
+    },
+    {
+      "id": "ResourceId::3571",
+      "name": "2D Image 3571"
+    },
+    {
+      "id": "ResourceId::3576",
+      "name": "2D Image 3576"
+    },
+    {
+      "id": "ResourceId::3581",
+      "name": "2D Image 3581"
+    },
+    {
+      "id": "ResourceId::3585",
+      "name": "Image View 3585"
+    },
+    {
+      "id": "ResourceId::3586",
+      "name": "Image View 3586"
+    },
+    {
+      "id": "ResourceId::3587",
+      "name": "Image View 3587"
+    },
+    {
+      "id": "ResourceId::3595",
+      "name": "2D Image 3595"
+    },
+    {
+      "id": "ResourceId::3599",
+      "name": "Image View 3599"
+    },
+    {
+      "id": "ResourceId::3607",
+      "name": "2D Image 3607"
+    },
+    {
+      "id": "ResourceId::3611",
+      "name": "Image View 3611"
+    },
+    {
+      "id": "ResourceId::3613",
+      "name": "2D Image 3613"
+    },
+    {
+      "id": "ResourceId::3617",
+      "name": "Image View 3617"
+    },
+    {
+      "id": "ResourceId::3619",
+      "name": "2D Image 3619"
+    },
+    {
+      "id": "ResourceId::3623",
+      "name": "Image View 3623"
+    },
+    {
+      "id": "ResourceId::3625",
+      "name": "2D Image 3625"
+    },
+    {
+      "id": "ResourceId::3629",
+      "name": "Image View 3629"
+    },
+    {
+      "id": "ResourceId::3631",
+      "name": "2D Image 3631"
+    },
+    {
+      "id": "ResourceId::3635",
+      "name": "Image View 3635"
+    },
+    {
+      "id": "ResourceId::3637",
+      "name": "2D Image 3637"
+    },
+    {
+      "id": "ResourceId::3641",
+      "name": "Image View 3641"
+    },
+    {
+      "id": "ResourceId::3643",
+      "name": "2D Image 3643"
+    },
+    {
+      "id": "ResourceId::3648",
+      "name": "2D Image 3648"
+    },
+    {
+      "id": "ResourceId::3652",
+      "name": "Image View 3652"
+    },
+    {
+      "id": "ResourceId::3653",
+      "name": "Image View 3653"
+    },
+    {
+      "id": "ResourceId::3655",
+      "name": "2D Image 3655"
+    },
+    {
+      "id": "ResourceId::3659",
+      "name": "Image View 3659"
+    },
+    {
+      "id": "ResourceId::3661",
+      "name": "2D Image 3661"
+    },
+    {
+      "id": "ResourceId::3665",
+      "name": "Image View 3665"
+    },
+    {
+      "id": "ResourceId::3667",
+      "name": "2D Image 3667"
+    },
+    {
+      "id": "ResourceId::3671",
+      "name": "Image View 3671"
+    },
+    {
+      "id": "ResourceId::3673",
+      "name": "2D Image 3673"
+    },
+    {
+      "id": "ResourceId::3677",
+      "name": "Image View 3677"
+    },
+    {
+      "id": "ResourceId::3679",
+      "name": "2D Image 3679"
+    },
+    {
+      "id": "ResourceId::3683",
+      "name": "Image View 3683"
+    },
+    {
+      "id": "ResourceId::3685",
+      "name": "2D Image 3685"
+    },
+    {
+      "id": "ResourceId::3689",
+      "name": "Image View 3689"
+    },
+    {
+      "id": "ResourceId::3691",
+      "name": "2D Image 3691"
+    },
+    {
+      "id": "ResourceId::3695",
+      "name": "Image View 3695"
+    },
+    {
+      "id": "ResourceId::3697",
+      "name": "2D Image 3697"
+    },
+    {
+      "id": "ResourceId::3701",
+      "name": "Image View 3701"
+    },
+    {
+      "id": "ResourceId::3703",
+      "name": "2D Image 3703"
+    },
+    {
+      "id": "ResourceId::3707",
+      "name": "Image View 3707"
+    },
+    {
+      "id": "ResourceId::3709",
+      "name": "2D Image 3709"
+    },
+    {
+      "id": "ResourceId::3713",
+      "name": "Image View 3713"
+    },
+    {
+      "id": "ResourceId::3715",
+      "name": "2D Image 3715"
+    },
+    {
+      "id": "ResourceId::3719",
+      "name": "Image View 3719"
+    },
+    {
+      "id": "ResourceId::3727",
+      "name": "2D Image 3727"
+    },
+    {
+      "id": "ResourceId::3731",
+      "name": "Image View 3731"
+    },
+    {
+      "id": "ResourceId::3733",
+      "name": "2D Image 3733"
+    },
+    {
+      "id": "ResourceId::3737",
+      "name": "Image View 3737"
+    },
+    {
+      "id": "ResourceId::3739",
+      "name": "2D Image 3739"
+    },
+    {
+      "id": "ResourceId::3743",
+      "name": "Image View 3743"
+    },
+    {
+      "id": "ResourceId::3745",
+      "name": "2D Image 3745"
+    },
+    {
+      "id": "ResourceId::3749",
+      "name": "Image View 3749"
+    },
+    {
+      "id": "ResourceId::3754",
+      "name": "2D Image 3754"
+    },
+    {
+      "id": "ResourceId::3764",
+      "name": "Image View 3764"
+    },
+    {
+      "id": "ResourceId::3765",
+      "name": "Buffer 3765"
+    },
+    {
+      "id": "ResourceId::3766",
+      "name": "Memory 3766"
+    },
+    {
+      "id": "ResourceId::3771",
+      "name": "Descriptor Layout 3771"
+    },
+    {
+      "id": "ResourceId::3772",
+      "name": "Descriptor Pool 3772"
+    },
+    {
+      "id": "ResourceId::3773",
+      "name": "Descriptor Set 3773"
+    },
+    {
+      "id": "ResourceId::3774",
+      "name": "Pipeline Layout 3774"
+    },
+    {
+      "id": "ResourceId::3775",
+      "name": "Graphics Pipeline 3775"
+    },
+    {
+      "id": "ResourceId::3777",
+      "name": "2D Image 3777"
+    },
+    {
+      "id": "ResourceId::3781",
+      "name": "Image View 3781"
+    },
+    {
+      "id": "ResourceId::3789",
+      "name": "2D Image 3789"
+    },
+    {
+      "id": "ResourceId::3793",
+      "name": "Image View 3793"
+    },
+    {
+      "id": "ResourceId::3805",
+      "name": "Descriptor Layout 3805"
+    },
+    {
+      "id": "ResourceId::3806",
+      "name": "Descriptor Pool 3806"
+    },
+    {
+      "id": "ResourceId::3808",
+      "name": "Descriptor Set 3808"
+    },
+    {
+      "id": "ResourceId::3810",
+      "name": "Pipeline Layout 3810"
+    },
+    {
+      "id": "ResourceId::3812",
+      "name": "2D Image 3812"
+    },
+    {
+      "id": "ResourceId::3816",
+      "name": "Image View 3816"
+    },
+    {
+      "id": "ResourceId::3818",
+      "name": "Graphics Pipeline 3818"
+    },
+    {
+      "id": "ResourceId::3819",
+      "name": "Graphics Pipeline 3819"
+    },
+    {
+      "id": "ResourceId::3834",
+      "name": "Graphics Pipeline 3834"
+    },
+    {
+      "id": "ResourceId::3836",
+      "name": "Graphics Pipeline 3836"
+    },
+    {
+      "id": "ResourceId::3845",
+      "name": "Graphics Pipeline 3845"
+    },
+    {
+      "id": "ResourceId::3846",
+      "name": "Graphics Pipeline 3846"
+    },
+    {
+      "id": "ResourceId::3847",
+      "name": "Graphics Pipeline 3847"
+    },
+    {
+      "id": "ResourceId::3848",
+      "name": "Graphics Pipeline 3848"
+    },
+    {
+      "id": "ResourceId::3850",
+      "name": "Buffer 3850"
+    },
+    {
+      "id": "ResourceId::3853",
+      "name": "Buffer 3853"
+    },
+    {
+      "id": "ResourceId::3856",
+      "name": "2D Image 3856"
+    },
+    {
+      "id": "ResourceId::3860",
+      "name": "Image View 3860"
+    },
+    {
+      "id": "ResourceId::3868",
+      "name": "2D Image 3868"
+    },
+    {
+      "id": "ResourceId::3872",
+      "name": "Image View 3872"
+    },
+    {
+      "id": "ResourceId::3880",
+      "name": "2D Image 3880"
+    },
+    {
+      "id": "ResourceId::3884",
+      "name": "Image View 3884"
+    },
+    {
+      "id": "ResourceId::3892",
+      "name": "2D Image 3892"
+    },
+    {
+      "id": "ResourceId::3896",
+      "name": "Image View 3896"
+    },
+    {
+      "id": "ResourceId::3946",
+      "name": "2D Image 3946"
+    },
+    {
+      "id": "ResourceId::3950",
+      "name": "Image View 3950"
+    },
+    {
+      "id": "ResourceId::3952",
+      "name": "2D Image 3952"
+    },
+    {
+      "id": "ResourceId::3956",
+      "name": "Image View 3956"
+    },
+    {
+      "id": "ResourceId::3958",
+      "name": "2D Image 3958"
+    },
+    {
+      "id": "ResourceId::3962",
+      "name": "Image View 3962"
+    },
+    {
+      "id": "ResourceId::3969",
+      "name": "2D Array Image 3969"
+    },
+    {
+      "id": "ResourceId::3973",
+      "name": "Image View 3973"
+    },
+    {
+      "id": "ResourceId::4032",
+      "name": "Baked Command Buffer 4032"
+    }
+  ],
+  "draw_count": 116
+}

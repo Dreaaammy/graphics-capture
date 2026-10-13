@@ -1,0 +1,204 @@
+SPIR-V 1.0 module, <id> bound of 200
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Vertex, main, "main", {gl_InstanceIndex, v_position, gl_PerVertex_var, f_vertex_color, v_color, f_uv, v_uv, f_uv_two, v_uv_two, f_material_id, f_hue_change, v_normal, v_tangent, v_joint, v_weight});
+
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+struct ObjectData {
+  float3 m_translation : [[Offset(0)]];
+  float m_hue_change : [[Offset(12)]];
+  float4 m_rotation : [[Offset(16)]];
+  float3 m_scale : [[Offset(32)]];
+  uint m_custom_vertex_color : [[Offset(44)]];
+  int m_skinning_offset : [[Offset(48)]];
+  int m_material_id : [[Offset(52)]];
+  float2 m_texture_trans : [[Offset(56)]];
+}
+struct ObjectBuffer : [[BufferBlock]] {
+  ObjectData[] m_objects : [[Offset(0), NonWritable]] : [[ArrayStride(64)]];
+}
+Uniform ObjectBuffer* u_object_buffer : [[DescriptorSet(1), Binding(1)]];
+Input int* gl_InstanceIndex : [[BuiltIn(InstanceIndex)]];
+Input float3* v_position : [[Location(0)]];
+struct gl_PerVertex : [[Block]] {
+  float4 gl_Position : [[BuiltIn(Position)]];
+  float gl_PointSize : [[BuiltIn(PointSize)]];
+  float[1] gl_ClipDistance : [[BuiltIn(ClipDistance)]];
+  float[1] gl_CullDistance : [[BuiltIn(CullDistance)]];
+}
+Output gl_PerVertex* gl_PerVertex_var;
+struct CameraBuffer : [[Block]] {
+  float4x4 m_view_matrix : [[ColMajor, MatrixStride(16), Offset(0)]];
+  float4x4 m_projection_matrix : [[ColMajor, MatrixStride(16), Offset(64)]];
+  float4x4 m_inverse_view_matrix : [[ColMajor, MatrixStride(16), Offset(128)]];
+  float4x4 m_inverse_projection_matrix : [[ColMajor, MatrixStride(16), Offset(192)]];
+  float4x4 m_projection_view_matrix : [[ColMajor, MatrixStride(16), Offset(256)]];
+  float4x4 m_inverse_projection_view_matrix : [[ColMajor, MatrixStride(16), Offset(320)]];
+}
+Uniform CameraBuffer* u_camera : [[DescriptorSet(1), Binding(0)]];
+Output float4* f_vertex_color : [[Location(0)]];
+Input float4* v_color : [[Location(2)]];
+Output float2* f_uv : [[Location(1)]];
+Input float2* v_uv : [[Location(3)]];
+Output float2* f_uv_two : [[Location(2)]];
+Input float2* v_uv_two : [[Location(4)]];
+Output int* f_material_id : [[Location(3), Flat]];
+Output float* f_hue_change : [[Location(4)]];
+struct SkinningMatrices : [[BufferBlock]] {
+  float4x4[] m_mat : [[ColMajor, MatrixStride(16), Offset(0), NonWritable]] : [[ArrayStride(64)]];
+}
+Uniform SkinningMatrices* u_skinning_matrices : [[DescriptorSet(1), Binding(2)]];
+Input float4* v_normal : [[Location(1)]];
+Input float4* v_tangent : [[Location(5)]];
+Input int4* v_joint : [[Location(6)]];
+Input float4* v_weight : [[Location(7)]];
+
+void main() {
+  float4* v_world_position;
+  float3* param;
+  float4* param@2;
+  float3* param@3;
+  float3* param@4;
+  uint* param@5;
+  int _113 = *gl_InstanceIndex;
+  int _114 = *gl_InstanceIndex;
+  int _116 = *gl_InstanceIndex;
+  float3* _122 = &u_object_buffer.m_objects[_113].m_translation;
+  float3 _123 = *_122;
+  *param = _123;
+  float4* _126 = &u_object_buffer.m_objects[_114].m_rotation;
+  float4 _127 = *_126;
+  *param@2 = _127;
+  float3* _129 = &u_object_buffer.m_objects[_116].m_scale;
+  float3 _130 = *_129;
+  *param@3 = _130;
+  float3 _132 = *v_position;
+  *param@4 = _132;
+  float4 _133 = getWorldPosition(param, param@2, param@3, param@4);
+  *v_world_position = _133;
+  float4x4* _144 = &u_camera.m_projection_view_matrix;
+  float4x4 _145 = *_144;
+  float4 _146 = *v_world_position;
+  float4 _147 = _145 * _146;
+  float4* _149 = &gl_PerVertex_var.gl_Position;
+  *_149 = _147;
+  float4 _153 = *v_color;
+  float4 _154 = _153.zyxw;
+  int _155 = *gl_InstanceIndex;
+  uint* _158 = &u_object_buffer.m_objects[_155].m_custom_vertex_color;
+  uint _159 = *_158;
+  *param@5 = _159;
+  float4 _160 = getVertexColor(param@5);
+  float4 _161 = _154 * _160;
+  *f_vertex_color = _161;
+  float2 _166 = *v_uv;
+  int _167 = *gl_InstanceIndex;
+  float2* _170 = &u_object_buffer.m_objects[_167].m_texture_trans;
+  float2 _171 = *_170;
+  float2 _172 = _166 + _171;
+  *f_uv = _172;
+  float2 _175 = *v_uv_two;
+  *f_uv_two = _175;
+  int _178 = *gl_InstanceIndex;
+  int* _181 = &u_object_buffer.m_objects[_178].m_material_id;
+  int _182 = *_181;
+  *f_material_id = _182;
+  int _185 = *gl_InstanceIndex;
+  float* _188 = &u_object_buffer.m_objects[_185].m_hue_change;
+  float _189 = *_188;
+  *f_hue_change = _189;
+  return;
+}
+
+float4 getVertexColor(uint* packed) {
+  float4* vertex_color;
+  uint _30 = *packed;
+  uint _33 = _30 >> unsigned(24);
+  float _34 = ConvertUToF(_33);
+  float _36 = _34 / 255.0000;
+  float* _39 = &vertex_color.w;
+  *_39 = _36;
+  uint _40 = *packed;
+  uint _42 = _40 >> unsigned(16);
+  uint _44 = _42 & 255;
+  float _45 = ConvertUToF(_44);
+  float _46 = _45 / 255.0000;
+  float* _48 = &vertex_color.x;
+  *_48 = _46;
+  uint _49 = *packed;
+  uint _51 = _49 >> unsigned(8);
+  uint _52 = _51 & 255;
+  float _53 = ConvertUToF(_52);
+  float _54 = _53 / 255.0000;
+  float* _56 = &vertex_color.y;
+  *_56 = _54;
+  uint _57 = *packed;
+  uint _58 = _57 & 255;
+  float _59 = ConvertUToF(_58);
+  float _60 = _59 / 255.0000;
+  float* _62 = &vertex_color.z;
+  *_62 = _60;
+  float4 _63 = *vertex_color;
+  return _63;
+}
+
+float3 rotateVector(float4* quat, float3* vec) {
+  float3 _66 = *vec;
+  float3 _68 = *vec;
+  float4 _69 = *quat;
+  float3 _70 = _69.xyz;
+  float3 _71 = GLSL.std.450::Cross(_68, _70);
+  float* _72 = &quat.w;
+  float _73 = *_72;
+  float3 _74 = *vec;
+  float3 _75 = _74 * _73;
+  float3 _76 = _71 + _75;
+  float4 _77 = *quat;
+  float3 _78 = _77.xyz;
+  float3 _79 = GLSL.std.450::Cross(_76, _78);
+  float3 _80 = _79 * 2.0000;
+  float3 _81 = _66 + _80;
+  return _81;
+}
+
+float4 getWorldPosition(float3* origin, float4* rotation, float3* scale, float3* local_pos) {
+  float4* param@6;
+  float3* param@7;
+  float3 _84 = *local_pos;
+  float3 _85 = *scale;
+  float3 _86 = _84 * _85;
+  *local_pos = _86;
+  float4 _88 = *rotation;
+  *param@6 = _88;
+  float3 _90 = *local_pos;
+  *param@7 = _90;
+  float3 _91 = rotateVector(param@6, param@7);
+  *local_pos = _91;
+  float3 _92 = *local_pos;
+  float3 _93 = *origin;
+  float3 _94 = _92 + _93;
+  *local_pos = _94;
+  float3 _95 = *local_pos;
+  float _97 = _95.x;
+  float _98 = _95.y;
+  float _99 = _95.z;
+  float4 _100 = CompositeConstruct({_97, _98, _99, 1.0000});
+  return _100;
+}
+
+

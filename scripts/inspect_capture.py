@@ -275,6 +275,7 @@ def replace_shader(controller, chosen, draws, final, folder):
         controller.RemoveReplacement(original)
         controller.SetFrameEvent(last_event, True)
         restored = image_from_texture(controller, final)
+        restored.save(folder / "shader_restored.png")
         controller.FreeTargetResource(replacement)
     before_bytes, after_bytes = before.tobytes(), after.tobytes()
     changed = sum(before_bytes[index:index + 3] != after_bytes[index:index + 3]

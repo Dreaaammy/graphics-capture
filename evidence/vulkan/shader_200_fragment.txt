@@ -1,0 +1,252 @@
+SPIR-V 1.0 module, <id> bound of 248
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Fragment, main, "main", {f_material_id, f_uv, f_vertex_color, f_hue_change, o_color});
+
+ExecutionMode(main, OriginUpperLeft);
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+UniformConstant SampledImage<float2D>* f_mesh_texture_0 : [[DescriptorSet(0), Binding(0)]];
+Input int* f_material_id : [[Location(3), Flat]];
+Input float2* f_uv : [[Location(1)]];
+Input float4* f_vertex_color : [[Location(0)]];
+Input float* f_hue_change : [[Location(4)]];
+Output float4* o_color : [[Location(0)]];
+UniformConstant SampledImage<float2D>* f_mesh_texture_1 : [[DescriptorSet(0), Binding(1)]];
+
+void main() {
+  float4* tex_color;
+  int* param;
+  float2* param@2;
+  float3* old_hsv;
+  float3* param@3;
+  float2* new_xy;
+  float3* new_color;
+  float3* param@4;
+  int _176 = *f_material_id;
+  *param = _176;
+  float2 _178 = *f_uv;
+  *param@2 = _178;
+  float4 _179 = sampleMeshTexture0(param, param@2);
+  *tex_color = _179;
+  float* _180 = &tex_color.w;
+  float _181 = *_180;
+  float* _185 = &f_vertex_color.w;
+  float _186 = *_185;
+  float _187 = _181 * _186;
+  bool _190 = _187 < 0.5000;
+  
+  if(_190) {
+    Kill();
+  }
+
+  float _195 = *f_hue_change;
+  bool _196 = _195 > 0.0000;
+  
+  if(_196) {
+    float4 _201 = *tex_color;
+    float3 _202 = _201.xyz;
+    *param@3 = _202;
+    float3 _203 = rgbToHsv(param@3);
+    *old_hsv = _203;
+    float _205 = *f_hue_change;
+    float* _206 = &old_hsv.y;
+    float _207 = *_206;
+    float2 _208 = CompositeConstruct({_205, _207});
+    *new_xy = _208;
+    float* _210 = &new_xy.x;
+    float _211 = *_210;
+    float* _212 = &new_xy.y;
+    float _213 = *_212;
+    float* _214 = &old_hsv.z;
+    float _215 = *_214;
+    float3 _216 = CompositeConstruct({_211, _213, _215});
+    *param@4 = _216;
+    float3 _218 = hsvToRgb(param@4);
+    *new_color = _218;
+    float* _219 = &new_color.x;
+    float _220 = *_219;
+    float* _221 = &new_color.y;
+    float _222 = *_221;
+    float* _223 = &new_color.z;
+    float _224 = *_223;
+    float* _225 = &tex_color.w;
+    float _226 = *_225;
+    float4 _227 = CompositeConstruct({_220, _222, _224, _226});
+    *tex_color = _227;
+  }
+
+  float4 _228 = *f_vertex_color;
+  float3 _229 = _228.xyz;
+  float4 _230 = *tex_color;
+  float3 _231 = _230.xyz;
+  float3 _232 = _231 * _229;
+  float* _233 = &tex_color.x;
+  float _234 = _232.x;
+  *_233 = _234;
+  float* _235 = &tex_color.y;
+  float _236 = _232.y;
+  *_235 = _236;
+  float* _237 = &tex_color.z;
+  float _238 = _232.z;
+  *_237 = _238;
+  float4 _241 = *tex_color;
+  float3 _242 = _241.xyz;
+  float _243 = _242.x;
+  float _244 = _242.y;
+  float _245 = _242.z;
+  float4 _246 = CompositeConstruct({_243, _244, _245, 1.0000});
+  *o_color = _246;
+  return;
+}
+
+float4 sampleMeshTexture0(int* material_id, float2* uv) {
+  SampledImage<float2D> _30 = *f_mesh_texture_0;
+  float2 _31 = *uv;
+  float4 _32 = ImageSampleImplicitLod(_30, _31, );
+  return _32;
+}
+
+float3 rgbToHsv(float3* c) {
+  float4* K;
+  float4* p;
+  float4* q;
+  float* d;
+  float* e;
+  *K = {0.0000, -0.3333, 0.6667, -1.0000};
+  float3 _43 = *c;
+  float2 _44 = _43.zy;
+  float4 _45 = *K;
+  float2 _46 = _45.wz;
+  float _47 = _44.x;
+  float _48 = _44.y;
+  float _49 = _46.x;
+  float _50 = _46.y;
+  float4 _51 = CompositeConstruct({_47, _48, _49, _50});
+  float3 _52 = *c;
+  float2 _53 = _52.yz;
+  float4 _54 = *K;
+  float2 _55 = _54.xy;
+  float _56 = _53.x;
+  float _57 = _53.y;
+  float _58 = _55.x;
+  float _59 = _55.y;
+  float4 _60 = CompositeConstruct({_56, _57, _58, _59});
+  float* _64 = &c.z;
+  float _65 = *_64;
+  float* _67 = &c.y;
+  float _68 = *_67;
+  float _69 = GLSL.std.450::Step(_65, _68);
+  float4 _70 = CompositeConstruct({_69, _69, _69, _69});
+  float4 _71 = GLSL.std.450::FMix(_51, _60, _70);
+  *p = _71;
+  float4 _73 = *p;
+  float3 _74 = _73.xyw;
+  float* _76 = &c.x;
+  float _77 = *_76;
+  float _78 = _74.x;
+  float _79 = _74.y;
+  float _80 = _74.z;
+  float4 _81 = CompositeConstruct({_78, _79, _80, _77});
+  float* _82 = &c.x;
+  float _83 = *_82;
+  float4 _84 = *p;
+  float3 _85 = _84.yzx;
+  float _86 = _85.x;
+  float _87 = _85.y;
+  float _88 = _85.z;
+  float4 _89 = CompositeConstruct({_83, _86, _87, _88});
+  float* _90 = &p.x;
+  float _91 = *_90;
+  float* _92 = &c.x;
+  float _93 = *_92;
+  float _94 = GLSL.std.450::Step(_91, _93);
+  float4 _95 = CompositeConstruct({_94, _94, _94, _94});
+  float4 _96 = GLSL.std.450::FMix(_81, _89, _95);
+  *q = _96;
+  float* _98 = &q.x;
+  float _99 = *_98;
+  float* _101 = &q.w;
+  float _102 = *_101;
+  float* _103 = &q.y;
+  float _104 = *_103;
+  float _105 = GLSL.std.450::FMin(_102, _104);
+  float _106 = _99 - _105;
+  *d = _106;
+  *e = 0.0000;
+  float* _109 = &q.z;
+  float _110 = *_109;
+  float* _111 = &q.w;
+  float _112 = *_111;
+  float* _113 = &q.y;
+  float _114 = *_113;
+  float _115 = _112 - _114;
+  float _117 = *d;
+  float _118 = 6.0000 * _117;
+  float _119 = *e;
+  float _120 = _118 + _119;
+  float _121 = _115 / _120;
+  float _122 = _110 + _121;
+  float _123 = GLSL.std.450::FAbs(_122);
+  float _124 = *d;
+  float* _125 = &q.x;
+  float _126 = *_125;
+  float _127 = *e;
+  float _128 = _126 + _127;
+  float _129 = _124 / _128;
+  float* _130 = &q.x;
+  float _131 = *_130;
+  float3 _132 = CompositeConstruct({_123, _129, _131});
+  return _132;
+}
+
+float3 hsvToRgb(float3* c@2) {
+  float4* K@2;
+  float3* p@2;
+  *K@2 = {1.0000, 0.6667, 0.3333, 3.0000};
+  float3 _141 = *c@2;
+  float3 _142 = _141.xxx;
+  float4 _143 = *K@2;
+  float3 _144 = _143.xyz;
+  float3 _145 = _142 + _144;
+  float3 _146 = GLSL.std.450::Fract(_145);
+  float3 _147 = _146 * 6.0000;
+  float4 _148 = *K@2;
+  float3 _149 = _148.www;
+  float3 _150 = _147 - _149;
+  float3 _151 = GLSL.std.450::FAbs(_150);
+  *p@2 = _151;
+  float* _152 = &c@2.z;
+  float _153 = *_152;
+  float4 _154 = *K@2;
+  float3 _155 = _154.xxx;
+  float3 _156 = *p@2;
+  float4 _157 = *K@2;
+  float3 _158 = _157.xxx;
+  float3 _159 = _156 - _158;
+  float3 _160 = CompositeConstruct({0.0000, 0.0000, 0.0000});
+  float3 _161 = CompositeConstruct({1.0000, 1.0000, 1.0000});
+  float3 _162 = GLSL.std.450::FClamp(_159, _160, _161);
+  float* _163 = &c@2.y;
+  float _164 = *_163;
+  float3 _165 = CompositeConstruct({_164, _164, _164});
+  float3 _166 = GLSL.std.450::FMix(_155, _162, _165);
+  float3 _167 = _166 * _153;
+  return _167;
+}
+
+

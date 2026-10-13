@@ -1,0 +1,300 @@
+SPIR-V 1.0 module, <id> bound of 297
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Vertex, main, "main", {gl_InstanceIndex, v_weight, v_joint, v_position, gl_PerVertex_var, f_vertex_color, v_color, f_uv, v_uv, f_uv_two, v_uv_two, f_material_id, f_hue_change, v_normal, v_tangent});
+
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+struct ObjectData {
+  float3 m_translation : [[Offset(0)]];
+  float m_hue_change : [[Offset(12)]];
+  float4 m_rotation : [[Offset(16)]];
+  float3 m_scale : [[Offset(32)]];
+  uint m_custom_vertex_color : [[Offset(44)]];
+  int m_skinning_offset : [[Offset(48)]];
+  int m_material_id : [[Offset(52)]];
+  float2 m_texture_trans : [[Offset(56)]];
+}
+struct ObjectBuffer : [[BufferBlock]] {
+  ObjectData[] m_objects : [[Offset(0), NonWritable]] : [[ArrayStride(64)]];
+}
+Uniform ObjectBuffer* u_object_buffer : [[DescriptorSet(1), Binding(1)]];
+Input int* gl_InstanceIndex : [[BuiltIn(InstanceIndex)]];
+Input float4* v_weight : [[Location(7)]];
+struct SkinningMatrices : [[BufferBlock]] {
+  float4x4[] m_mat : [[ColMajor, MatrixStride(16), Offset(0), NonWritable]] : [[ArrayStride(64)]];
+}
+Uniform SkinningMatrices* u_skinning_matrices : [[DescriptorSet(1), Binding(2)]];
+Input int4* v_joint : [[Location(6)]];
+Input float3* v_position : [[Location(0)]];
+struct gl_PerVertex : [[Block]] {
+  float4 gl_Position : [[BuiltIn(Position)]];
+  float gl_PointSize : [[BuiltIn(PointSize)]];
+  float[1] gl_ClipDistance : [[BuiltIn(ClipDistance)]];
+  float[1] gl_CullDistance : [[BuiltIn(CullDistance)]];
+}
+Output gl_PerVertex* gl_PerVertex_var;
+struct CameraBuffer : [[Block]] {
+  float4x4 m_view_matrix : [[ColMajor, MatrixStride(16), Offset(0)]];
+  float4x4 m_projection_matrix : [[ColMajor, MatrixStride(16), Offset(64)]];
+  float4x4 m_inverse_view_matrix : [[ColMajor, MatrixStride(16), Offset(128)]];
+  float4x4 m_inverse_projection_matrix : [[ColMajor, MatrixStride(16), Offset(192)]];
+  float4x4 m_projection_view_matrix : [[ColMajor, MatrixStride(16), Offset(256)]];
+  float4x4 m_inverse_projection_view_matrix : [[ColMajor, MatrixStride(16), Offset(320)]];
+}
+Uniform CameraBuffer* u_camera : [[DescriptorSet(1), Binding(0)]];
+Output float4* f_vertex_color : [[Location(0)]];
+Input float4* v_color : [[Location(2)]];
+Output float2* f_uv : [[Location(1)]];
+Input float2* v_uv : [[Location(3)]];
+Output float2* f_uv_two : [[Location(2)]];
+Input float2* v_uv_two : [[Location(4)]];
+Output int* f_material_id : [[Location(3), Flat]];
+Output float* f_hue_change : [[Location(4)]];
+Input float4* v_normal : [[Location(1)]];
+Input float4* v_tangent : [[Location(5)]];
+
+void main() {
+  int* offset;
+  float4x4* joint_matrix;
+  float4* v_skinning_position;
+  float4* v_world_position;
+  float3* param;
+  float4* param@2;
+  float3* param@3;
+  float3* param@4;
+  uint* param@5;
+  int _114 = *gl_InstanceIndex;
+  int* _117 = &u_object_buffer.m_objects[_114].m_skinning_offset;
+  int _118 = *_117;
+  *offset = _118;
+  float* _125 = &v_weight.x;
+  float _126 = *_125;
+  int* _134 = &v_joint.x;
+  int _135 = *_134;
+  int _136 = *offset;
+  int _137 = _135 + _136;
+  int _138 = GLSL.std.450::SMax(_137, 0);
+  float4x4* _140 = &u_skinning_matrices.m_mat[_138];
+  float4x4 _141 = *_140;
+  float4x4 _142 = _141 * _126;
+  float* _143 = &v_weight.y;
+  float _144 = *_143;
+  int* _145 = &v_joint.y;
+  int _146 = *_145;
+  int _147 = *offset;
+  int _148 = _146 + _147;
+  int _149 = GLSL.std.450::SMax(_148, 0);
+  float4x4* _150 = &u_skinning_matrices.m_mat[_149];
+  float4x4 _151 = *_150;
+  float4x4 _152 = _151 * _144;
+  float4 _153 = _142[0];
+  float4 _154 = _152[0];
+  float4 _155 = _153 + _154;
+  float4 _156 = _142[1];
+  float4 _157 = _152[1];
+  float4 _158 = _156 + _157;
+  float4 _159 = _142[2];
+  float4 _160 = _152[2];
+  float4 _161 = _159 + _160;
+  float4 _162 = _142[3];
+  float4 _163 = _152[3];
+  float4 _164 = _162 + _163;
+  float4x4 _165 = CompositeConstruct({_155, _158, _161, _164});
+  float* _166 = &v_weight.z;
+  float _167 = *_166;
+  int* _168 = &v_joint.z;
+  int _169 = *_168;
+  int _170 = *offset;
+  int _171 = _169 + _170;
+  int _172 = GLSL.std.450::SMax(_171, 0);
+  float4x4* _173 = &u_skinning_matrices.m_mat[_172];
+  float4x4 _174 = *_173;
+  float4x4 _175 = _174 * _167;
+  float4 _176 = _165[0];
+  float4 _177 = _175[0];
+  float4 _178 = _176 + _177;
+  float4 _179 = _165[1];
+  float4 _180 = _175[1];
+  float4 _181 = _179 + _180;
+  float4 _182 = _165[2];
+  float4 _183 = _175[2];
+  float4 _184 = _182 + _183;
+  float4 _185 = _165[3];
+  float4 _186 = _175[3];
+  float4 _187 = _185 + _186;
+  float4x4 _188 = CompositeConstruct({_178, _181, _184, _187});
+  float* _189 = &v_weight.w;
+  float _190 = *_189;
+  int* _191 = &v_joint.w;
+  int _192 = *_191;
+  int _193 = *offset;
+  int _194 = _192 + _193;
+  int _195 = GLSL.std.450::SMax(_194, 0);
+  float4x4* _196 = &u_skinning_matrices.m_mat[_195];
+  float4x4 _197 = *_196;
+  float4x4 _198 = _197 * _190;
+  float4 _199 = _188[0];
+  float4 _200 = _198[0];
+  float4 _201 = _199 + _200;
+  float4 _202 = _188[1];
+  float4 _203 = _198[1];
+  float4 _204 = _202 + _203;
+  float4 _205 = _188[2];
+  float4 _206 = _198[2];
+  float4 _207 = _205 + _206;
+  float4 _208 = _188[3];
+  float4 _209 = _198[3];
+  float4 _210 = _208 + _209;
+  float4x4 _211 = CompositeConstruct({_201, _204, _207, _210});
+  *joint_matrix = _211;
+  float4x4 _213 = *joint_matrix;
+  float3 _216 = *v_position;
+  float _217 = _216.x;
+  float _218 = _216.y;
+  float _219 = _216.z;
+  float4 _220 = CompositeConstruct({_217, _218, _219, 1.0000});
+  float4 _221 = _213 * _220;
+  *v_skinning_position = _221;
+  int _223 = *gl_InstanceIndex;
+  int _224 = *gl_InstanceIndex;
+  int _226 = *gl_InstanceIndex;
+  float3* _230 = &u_object_buffer.m_objects[_223].m_translation;
+  float3 _231 = *_230;
+  *param = _231;
+  float4* _234 = &u_object_buffer.m_objects[_224].m_rotation;
+  float4 _235 = *_234;
+  *param@2 = _235;
+  float3* _237 = &u_object_buffer.m_objects[_226].m_scale;
+  float3 _238 = *_237;
+  *param@3 = _238;
+  float4 _240 = *v_skinning_position;
+  float3 _241 = _240.xyz;
+  *param@4 = _241;
+  float4 _242 = getWorldPosition(param, param@2, param@3, param@4);
+  *v_world_position = _242;
+  float4x4* _251 = &u_camera.m_projection_view_matrix;
+  float4x4 _252 = *_251;
+  float4 _253 = *v_world_position;
+  float4 _254 = _252 * _253;
+  float4* _256 = &gl_PerVertex_var.gl_Position;
+  *_256 = _254;
+  float4 _259 = *v_color;
+  float4 _260 = _259.zyxw;
+  int _261 = *gl_InstanceIndex;
+  uint* _264 = &u_object_buffer.m_objects[_261].m_custom_vertex_color;
+  uint _265 = *_264;
+  *param@5 = _265;
+  float4 _266 = getVertexColor(param@5);
+  float4 _267 = _260 * _266;
+  *f_vertex_color = _267;
+  float2 _272 = *v_uv;
+  int _273 = *gl_InstanceIndex;
+  float2* _276 = &u_object_buffer.m_objects[_273].m_texture_trans;
+  float2 _277 = *_276;
+  float2 _278 = _272 + _277;
+  *f_uv = _278;
+  float2 _281 = *v_uv_two;
+  *f_uv_two = _281;
+  int _284 = *gl_InstanceIndex;
+  int* _286 = &u_object_buffer.m_objects[_284].m_material_id;
+  int _287 = *_286;
+  *f_material_id = _287;
+  int _290 = *gl_InstanceIndex;
+  float* _293 = &u_object_buffer.m_objects[_290].m_hue_change;
+  float _294 = *_293;
+  *f_hue_change = _294;
+  return;
+}
+
+float4 getVertexColor(uint* packed) {
+  float4* vertex_color;
+  uint _30 = *packed;
+  uint _33 = _30 >> unsigned(24);
+  float _34 = ConvertUToF(_33);
+  float _36 = _34 / 255.0000;
+  float* _39 = &vertex_color.w;
+  *_39 = _36;
+  uint _40 = *packed;
+  uint _42 = _40 >> unsigned(16);
+  uint _44 = _42 & 255;
+  float _45 = ConvertUToF(_44);
+  float _46 = _45 / 255.0000;
+  float* _48 = &vertex_color.x;
+  *_48 = _46;
+  uint _49 = *packed;
+  uint _51 = _49 >> unsigned(8);
+  uint _52 = _51 & 255;
+  float _53 = ConvertUToF(_52);
+  float _54 = _53 / 255.0000;
+  float* _56 = &vertex_color.y;
+  *_56 = _54;
+  uint _57 = *packed;
+  uint _58 = _57 & 255;
+  float _59 = ConvertUToF(_58);
+  float _60 = _59 / 255.0000;
+  float* _62 = &vertex_color.z;
+  *_62 = _60;
+  float4 _63 = *vertex_color;
+  return _63;
+}
+
+float3 rotateVector(float4* quat, float3* vec) {
+  float3 _66 = *vec;
+  float3 _68 = *vec;
+  float4 _69 = *quat;
+  float3 _70 = _69.xyz;
+  float3 _71 = GLSL.std.450::Cross(_68, _70);
+  float* _72 = &quat.w;
+  float _73 = *_72;
+  float3 _74 = *vec;
+  float3 _75 = _74 * _73;
+  float3 _76 = _71 + _75;
+  float4 _77 = *quat;
+  float3 _78 = _77.xyz;
+  float3 _79 = GLSL.std.450::Cross(_76, _78);
+  float3 _80 = _79 * 2.0000;
+  float3 _81 = _66 + _80;
+  return _81;
+}
+
+float4 getWorldPosition(float3* origin, float4* rotation, float3* scale, float3* local_pos) {
+  float4* param@6;
+  float3* param@7;
+  float3 _84 = *local_pos;
+  float3 _85 = *scale;
+  float3 _86 = _84 * _85;
+  *local_pos = _86;
+  float4 _88 = *rotation;
+  *param@6 = _88;
+  float3 _90 = *local_pos;
+  *param@7 = _90;
+  float3 _91 = rotateVector(param@6, param@7);
+  *local_pos = _91;
+  float3 _92 = *local_pos;
+  float3 _93 = *origin;
+  float3 _94 = _92 + _93;
+  *local_pos = _94;
+  float3 _95 = *local_pos;
+  float _97 = _95.x;
+  float _98 = _95.y;
+  float _99 = _95.z;
+  float4 _100 = CompositeConstruct({_97, _98, _99, 1.0000});
+  return _100;
+}
+
+

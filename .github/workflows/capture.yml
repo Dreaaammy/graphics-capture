@@ -6,8 +6,8 @@ on:
       driver:
         description: Game renderer
         type: choice
-        options: [gl, vulkan]
-        default: gl
+        options: [vulkan]
+        default: vulkan
       capture_run_id:
         description: Optional earlier run with a saved game capture
         type: string

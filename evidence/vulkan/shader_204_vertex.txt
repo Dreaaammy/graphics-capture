@@ -1,0 +1,188 @@
+SPIR-V 1.0 module, <id> bound of 179
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Vertex, main, "main", {v_position, gl_InstanceIndex, v_color, gl_PerVertex_var, f_vertex_color, f_uv, v_uv, f_uv_two, v_uv_two, f_material_id, f_hue_change, v_normal, v_tangent, v_joint, v_weight});
+
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+struct Constants : [[Block]] {
+  float3 m_wind_direction : [[Offset(0)]];
+}
+PushConstant Constants* u_push_constants;
+Input float3* v_position : [[Location(0)]];
+struct ObjectData {
+  float3 m_translation : [[Offset(0)]];
+  float m_hue_change : [[Offset(12)]];
+  float4 m_rotation : [[Offset(16)]];
+  float3 m_scale : [[Offset(32)]];
+  uint m_custom_vertex_color : [[Offset(44)]];
+  int m_skinning_offset : [[Offset(48)]];
+  int m_material_id : [[Offset(52)]];
+  float2 m_texture_trans : [[Offset(56)]];
+}
+struct ObjectBuffer : [[BufferBlock]] {
+  ObjectData[] m_objects : [[Offset(0), NonWritable]] : [[ArrayStride(64)]];
+}
+Uniform ObjectBuffer* u_object_buffer : [[DescriptorSet(1), Binding(1)]];
+Input int* gl_InstanceIndex : [[BuiltIn(InstanceIndex)]];
+Input float4* v_color : [[Location(2)]];
+struct gl_PerVertex : [[Block]] {
+  float4 gl_Position : [[BuiltIn(Position)]];
+  float gl_PointSize : [[BuiltIn(PointSize)]];
+  float[1] gl_ClipDistance : [[BuiltIn(ClipDistance)]];
+  float[1] gl_CullDistance : [[BuiltIn(CullDistance)]];
+}
+Output gl_PerVertex* gl_PerVertex_var;
+struct CameraBuffer : [[Block]] {
+  float4x4 m_view_matrix : [[ColMajor, MatrixStride(16), Offset(0)]];
+  float4x4 m_projection_matrix : [[ColMajor, MatrixStride(16), Offset(64)]];
+  float4x4 m_inverse_view_matrix : [[ColMajor, MatrixStride(16), Offset(128)]];
+  float4x4 m_inverse_projection_matrix : [[ColMajor, MatrixStride(16), Offset(192)]];
+  float4x4 m_projection_view_matrix : [[ColMajor, MatrixStride(16), Offset(256)]];
+  float4x4 m_inverse_projection_view_matrix : [[ColMajor, MatrixStride(16), Offset(320)]];
+}
+Uniform CameraBuffer* u_camera : [[DescriptorSet(1), Binding(0)]];
+Output float4* f_vertex_color : [[Location(0)]];
+Output float2* f_uv : [[Location(1)]];
+Input float2* v_uv : [[Location(3)]];
+Output float2* f_uv_two : [[Location(2)]];
+Input float2* v_uv_two : [[Location(4)]];
+Output int* f_material_id : [[Location(3), Flat]];
+Output float* f_hue_change : [[Location(4)]];
+struct SkinningMatrices : [[BufferBlock]] {
+  float4x4[] m_mat : [[ColMajor, MatrixStride(16), Offset(0), NonWritable]] : [[ArrayStride(64)]];
+}
+Uniform SkinningMatrices* u_skinning_matrices : [[DescriptorSet(1), Binding(2)]];
+Input float4* v_normal : [[Location(1)]];
+Input float4* v_tangent : [[Location(5)]];
+Input int4* v_joint : [[Location(6)]];
+Input float4* v_weight : [[Location(7)]];
+
+void main() {
+  float3* offset;
+  float4* v_world_position;
+  float3* param;
+  float4* param@2;
+  float3* param@3;
+  float3* param@4;
+  float3* _70 = &u_push_constants.m_wind_direction;
+  float3 _71 = *_70;
+  float* _76 = &v_position.y;
+  float _77 = *_76;
+  float _79 = _77 * 0.1000;
+  float3 _80 = _71 * _79;
+  float3 _81 = GLSL.std.450::Sin(_80);
+  *offset = _81;
+  float3* _82 = &u_push_constants.m_wind_direction;
+  float3 _83 = *_82;
+  float3 _84 = GLSL.std.450::Cos(_83);
+  float3 _86 = _84 * 0.7000;
+  float _87 = _86.x;
+  float _88 = _86.y;
+  float _89 = _86.z;
+  float3 _90 = CompositeConstruct({_87, _88, _89});
+  float3 _91 = *offset;
+  float3 _92 = _91 + _90;
+  *offset = _92;
+  int _102 = *gl_InstanceIndex;
+  float3* _104 = &u_object_buffer.m_objects[_102].m_translation;
+  float3 _105 = *_104;
+  float3 _106 = *offset;
+  float* _110 = &v_color.x;
+  float _111 = *_110;
+  float3 _112 = _106 * _111;
+  float3 _113 = _105 + _112;
+  int _114 = *gl_InstanceIndex;
+  int _116 = *gl_InstanceIndex;
+  *param = _113;
+  float4* _121 = &u_object_buffer.m_objects[_114].m_rotation;
+  float4 _122 = *_121;
+  *param@2 = _122;
+  float3* _124 = &u_object_buffer.m_objects[_116].m_scale;
+  float3 _125 = *_124;
+  *param@3 = _125;
+  float3 _127 = *v_position;
+  *param@4 = _127;
+  float4 _128 = getWorldPosition(param, param@2, param@3, param@4);
+  *v_world_position = _128;
+  float4x4* _139 = &u_camera.m_projection_view_matrix;
+  float4x4 _140 = *_139;
+  float4 _141 = *v_world_position;
+  float4 _142 = _140 * _141;
+  float4* _144 = &gl_PerVertex_var.gl_Position;
+  *_144 = _142;
+  *f_vertex_color = {1.0000, 1.0000, 1.0000, 1.0000};
+  float2 _151 = *v_uv;
+  *f_uv = _151;
+  float2 _154 = *v_uv_two;
+  *f_uv_two = _154;
+  int _157 = *gl_InstanceIndex;
+  int* _160 = &u_object_buffer.m_objects[_157].m_material_id;
+  int _161 = *_160;
+  *f_material_id = _161;
+  int _164 = *gl_InstanceIndex;
+  float* _167 = &u_object_buffer.m_objects[_164].m_hue_change;
+  float _168 = *_167;
+  *f_hue_change = _168;
+  return;
+}
+
+float3 rotateVector(float4* quat, float3* vec) {
+  float3 _23 = *vec;
+  float3 _25 = *vec;
+  float4 _26 = *quat;
+  float3 _27 = _26.xyz;
+  float3 _28 = GLSL.std.450::Cross(_25, _27);
+  float* _32 = &quat.w;
+  float _33 = *_32;
+  float3 _34 = *vec;
+  float3 _35 = _34 * _33;
+  float3 _36 = _28 + _35;
+  float4 _37 = *quat;
+  float3 _38 = _37.xyz;
+  float3 _39 = GLSL.std.450::Cross(_36, _38);
+  float3 _40 = _39 * 2.0000;
+  float3 _41 = _23 + _40;
+  return _41;
+}
+
+float4 getWorldPosition(float3* origin, float4* rotation, float3* scale, float3* local_pos) {
+  float4* param@5;
+  float3* param@6;
+  float3 _44 = *local_pos;
+  float3 _45 = *scale;
+  float3 _46 = _44 * _45;
+  *local_pos = _46;
+  float4 _48 = *rotation;
+  *param@5 = _48;
+  float3 _50 = *local_pos;
+  *param@6 = _50;
+  float3 _51 = rotateVector(param@5, param@6);
+  *local_pos = _51;
+  float3 _52 = *local_pos;
+  float3 _53 = *origin;
+  float3 _54 = _52 + _53;
+  *local_pos = _54;
+  float3 _55 = *local_pos;
+  float _57 = _55.x;
+  float _58 = _55.y;
+  float _59 = _55.z;
+  float4 _60 = CompositeConstruct({_57, _58, _59, 1.0000});
+  return _60;
+}
+
+

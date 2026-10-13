@@ -1,0 +1,255 @@
+
+ReplayController.GetPostVSData
+
+GetPostVSData(instance, view, stage)
+
+Retrieve the generated data from one of the geometry processing shader stages.
+
+:param int instance: The index of the instance to retrieve data for, or 0 for non-instanced draws.
+:param int view: The index of the multiview view to retrieve data for, or 0 if multiview is disabled.
+:param MeshDataStage stage: The stage of the geometry processing pipeline to retrieve data from.
+:return: The information describing where the post-transform data is stored.
+:rtype: MeshFormat
+
+
+
+ReplayController.GetBufferData
+
+GetBufferData(buff, offset, len)
+
+Retrieve the contents of a range of a buffer as a ``bytes``.
+
+:param ResourceId buff: The id of the buffer to retrieve data from.
+:param int offset: The byte offset to the start of the range.
+:param int len: The length of the range, or 0 to retrieve the rest of the bytes in the buffer.
+:return: The requested buffer contents.
+:rtype: bytes
+
+
+
+ReplayController.GetTextureData
+
+GetTextureData(tex, sub)
+
+Retrieve the contents of one subresource of a texture as a ``bytes``.
+
+:param ResourceId tex: The id of the texture to retrieve data from.
+:param Subresource sub: The subresource within this texture to use.
+:return: The requested texture contents.
+:rtype: bytes
+
+
+
+ReplayController.DisassembleShader
+
+DisassembleShader(pipeline, refl, target)
+
+Retrieve the disassembly for a given shader, for the given disassembly target.
+
+:param ResourceId pipeline: The pipeline state object, if applicable, that this shader is bound to.
+:param ShaderReflection refl: The shader reflection details of the shader to disassemble
+:param str target: The name of the disassembly target to generate for. Must be one of the values
+  returned by :meth:`GetDisassemblyTargets`, or empty to use the default generation.
+:return: The disassembly text, or an error message if something went wrong.
+:rtype: str
+
+
+
+ReplayController.GetDisassemblyTargets
+
+GetDisassemblyTargets(withPipeline)
+
+Retrieve the list of possible disassembly targets for :meth:`DisassembleShader`. The
+values are implementation dependent but will always include a default target first which is the
+native disassembly of the shader. Further options may be available for additional diassembly views
+or hardware-specific ISA formats.
+
+:param bool withPipeline: More disassembly may be available when a pipeline is specified.
+:return: The list of disassembly targets available.
+:rtype: List[str]
+
+
+
+ReplayController.BuildTargetShader
+
+BuildTargetShader(entry, sourceEncoding, source, compileFlags, type)
+
+Builds a shader suitable for running in the capture's API as a replacement shader.
+
+:param str entry: The entry point to use when compiling.
+:param ShaderEncoding sourceEncoding: The encoding of the source data.
+:param bytes source: The source data itself.
+:param ShaderCompileFlags compileFlags: API-specific compilation flags.
+:param ShaderStage type: The stage that this shader will be executed at.
+:return: A ``tuple`` with the id of the new shader if compilation was successful,
+  :meth:`ResourceId.Null` otherwise, and a ``str`` with any warnings/errors from compilation.
+:rtype: Tuple[ResourceId,str]
+
+
+
+ReplayController.ReplaceResource
+
+ReplaceResource(original, replacement)
+
+Replace one resource with another for subsequent replay and analysis work.
+
+This is commonly used for modifying the capture by selectively replacing resources with newly
+created resources.
+
+See :meth:`BuildTargetShader`, :meth:`RemoveReplacement`.
+
+:param ResourceId original: The id of the original resource that should be substituted.
+:param ResourceId replacement: The id of the new resource that should be used instead.
+
+
+
+ReplayController.GetPipelineState
+
+GetPipelineState()
+
+Retrieve the current :class:`PipeState` pipeline state abstraction.
+
+This pipeline state will always be valid, and allows queries that will work regardless of the
+capture's API.
+
+:return: The current pipeline state abstraction.
+:rtype: PipeState
+
+
+
+ReplayController.GetGLPipelineState
+
+GetGLPipelineState()
+
+Retrieve the current :class:`GLState` pipeline state.
+
+The return value will be ``None`` if the capture is not using the OpenGL API.
+You should use :meth:`GetAPIProperties` to determine the API of the capture.
+
+See also :meth:`GetPipelineState`.
+
+:return: The current OpenGL pipeline state.
+:rtype: GLState
+
+
+
+ReplayController.GetVulkanPipelineState
+
+GetVulkanPipelineState()
+
+Retrieve the current :class:`VKState` pipeline state.
+
+The return value will be ``None`` if the capture is not using the Vulkan API.
+You should use :meth:`GetAPIProperties` to determine the API of the capture.
+
+See also :meth:`GetPipelineState`.
+
+:return: The current Vulkan pipeline state.
+:rtype: VKState
+
+
+
+PipeState.GetShaderReflection
+
+GetShaderReflection(stage)
+
+Retrieves the shader reflection information for a shader stage.
+
+This returns ``None`` if no shader is bound.
+
+:param ShaderStage stage: The shader stage to fetch.
+:return: The reflection data for the given shader.
+:rtype: ShaderReflection
+
+
+
+PipeState.GetShader
+
+GetShader(stage)
+
+Retrieves the object ID of the shader bound at a shader stage.
+
+:param ShaderStage stage: The shader stage to fetch.
+:return: The object ID for the given shader.
+:rtype: ResourceId
+
+
+
+PipeState.GetOutputTargets
+
+GetOutputTargets()
+
+Retrieves the resources bound to the color outputs.
+
+:return: The currently bound output targets.
+:rtype: List[BoundResource]
+
+
+
+PipeState.GetReadOnlyResources
+
+GetReadOnlyResources(stage, onlyUsed=False)
+GetReadOnlyResources(stage)
+
+Retrieves the read-only resources bound to a particular shader stage.
+
+:param ShaderStage stage: The shader stage to fetch from.
+:param bool onlyUsed: Return only a subset of resources containing those actually used by the
+  shader.
+:return: The currently bound read-only resources.
+:rtype: List[BoundResourceArray]
+
+
+
+PipeState.GetVertexInputs
+
+GetVertexInputs()
+
+Retrieves the currently specified vertex attributes.
+
+:return: The list of current vertex attributes.
+:rtype: List[VertexInputAttribute]
+
+
+
+PipeState.GetVBuffers
+
+GetVBuffers()
+
+Retrieves the currently bound vertex buffers.
+
+:return: The list of bound vertex buffers.
+:rtype: List[BoundVBuffer]
+
+
+
+PipeState.GetIBuffer
+
+GetIBuffer()
+
+Retrieves the current index buffer binding.
+
+.. note::
+  On OpenGL the index stride/width is not part of any state, but is specified in each action.
+  In this case the current stride is whichever was last specified to a action, as if there was
+  implicit state set by a action.
+
+:return: A :class:`BoundVBuffer` with the index buffer details
+:rtype: BoundVBuffer
+
+
+
+PipeState.GetConstantBuffer
+
+GetConstantBuffer(stage, BufIdx, ArrayIdx)
+
+Retrieves the constant buffer at a given binding.
+
+:param ShaderStage stage: The shader stage to fetch from.
+:param int BufIdx: The index in the shader's ConstantBlocks array to look up.
+:param int ArrayIdx: For APIs that support arrays of constant buffers in a single binding, the index
+  in that array to look up.
+:return: The constant buffer at the specified binding.
+:rtype: BoundCBuffer
+
+

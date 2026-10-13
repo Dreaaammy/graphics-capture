@@ -164,6 +164,10 @@ def replay_capture(path, folder):
             image = image.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
         image.save(folder / "frame.png")
         inspect(controller, actions, textures, final, folder)
+        manifest["capture_unchanged_after_replay"] = hashlib.sha256(path.read_bytes()).hexdigest() == manifest["sha256"]
+        if not manifest["capture_unchanged_after_replay"]:
+            raise RuntimeError("The original capture was unexpectedly modified")
+        (folder / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
         print("VERIFIED:", manifest["api"], "draws:", manifest["draw_count"],
               "textures:", len(textures), "frame:", manifest["frame_number"], flush=True)
     finally:

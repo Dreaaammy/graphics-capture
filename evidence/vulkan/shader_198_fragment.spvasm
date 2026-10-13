@@ -1,0 +1,59 @@
+; SPIR-V
+; Version: 1.0
+; Generator: Google Shaderc over Glslang; 11
+; Bound: 30
+; Schema: 0
+               OpCapability Shader
+          %1 = OpExtInstImport "GLSL.std.450"
+               OpMemoryModel Logical GLSL450
+               OpEntryPoint Fragment %main "main" %f_uv %o_color %f_color %f_sampler_index
+               OpExecutionMode %main OriginUpperLeft
+               OpSource GLSL 450
+               OpSourceExtension "GL_GOOGLE_cpp_style_line_directive"
+               OpSourceExtension "GL_GOOGLE_include_directive"
+               OpName %main "main"
+               OpName %tex_color "tex_color"
+               OpName %f_tex "f_tex"
+               OpName %f_uv "f_uv"
+               OpName %o_color "o_color"
+               OpName %f_color "f_color"
+               OpName %f_sampler_index "f_sampler_index"
+               OpDecorate %f_tex DescriptorSet 0
+               OpDecorate %f_tex Binding 0
+               OpDecorate %f_uv Location 1
+               OpDecorate %o_color Location 0
+               OpDecorate %f_color Location 0
+               OpDecorate %f_sampler_index Flat
+               OpDecorate %f_sampler_index Location 2
+       %void = OpTypeVoid
+          %3 = OpTypeFunction %void
+      %float = OpTypeFloat 32
+    %v4float = OpTypeVector %float 4
+%_ptr_Function_v4float = OpTypePointer Function %v4float
+         %10 = OpTypeImage %float 2D 0 0 0 1 Unknown
+         %11 = OpTypeSampledImage %10
+%_ptr_UniformConstant_11 = OpTypePointer UniformConstant %11
+      %f_tex = OpVariable %_ptr_UniformConstant_11 UniformConstant
+    %v2float = OpTypeVector %float 2
+%_ptr_Input_v2float = OpTypePointer Input %v2float
+       %f_uv = OpVariable %_ptr_Input_v2float Input
+%_ptr_Output_v4float = OpTypePointer Output %v4float
+    %o_color = OpVariable %_ptr_Output_v4float Output
+%_ptr_Input_v4float = OpTypePointer Input %v4float
+    %f_color = OpVariable %_ptr_Input_v4float Input
+        %int = OpTypeInt 32 1
+%_ptr_Input_int = OpTypePointer Input %int
+%f_sampler_index = OpVariable %_ptr_Input_int Input
+       %main = OpFunction %void None %3
+          %5 = OpLabel
+  %tex_color = OpVariable %_ptr_Function_v4float Function
+         %14 = OpLoad %11 %f_tex
+         %18 = OpLoad %v2float %f_uv
+         %19 = OpImageSampleImplicitLod %v4float %14 %18
+               OpStore %tex_color %19
+         %22 = OpLoad %v4float %tex_color
+         %25 = OpLoad %v4float %f_color
+         %26 = OpFMul %v4float %22 %25
+               OpStore %o_color %26
+               OpReturn
+               OpFunctionEnd

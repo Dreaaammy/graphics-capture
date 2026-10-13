@@ -1,0 +1,64 @@
+SPIR-V 1.0 module, <id> bound of 59
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Fragment, main, "main", {f_material_id, f_uv, f_vertex_color, o_color});
+
+ExecutionMode(main, OriginUpperLeft);
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+UniformConstant SampledImage<float2D>* f_mesh_texture_0 : [[DescriptorSet(0), Binding(0)]];
+Input int* f_material_id : [[Location(3), Flat]];
+Input float2* f_uv : [[Location(1)]];
+Input float4* f_vertex_color : [[Location(0)]];
+Output float4* o_color : [[Location(0)]];
+UniformConstant SampledImage<float2D>* f_mesh_texture_1 : [[DescriptorSet(0), Binding(1)]];
+
+void main() {
+  float4* mixed_color;
+  int* param;
+  float2* param@2;
+  int _33 = *f_material_id;
+  *param = _33;
+  float2 _35 = *f_uv;
+  *param@2 = _35;
+  float4 _36 = sampleMeshTexture0(param, param@2);
+  float4 _39 = *f_vertex_color;
+  float4 _40 = _36 * _39;
+  *mixed_color = _40;
+  float4 _44 = *mixed_color;
+  float3 _45 = _44.xyz;
+  float* _49 = &mixed_color.w;
+  float _50 = *_49;
+  float3 _51 = _45 * _50;
+  float* _52 = &mixed_color.w;
+  float _53 = *_52;
+  float _54 = _51.x;
+  float _55 = _51.y;
+  float _56 = _51.z;
+  float4 _57 = CompositeConstruct({_54, _55, _56, _53});
+  *o_color = _57;
+  return;
+}
+
+float4 sampleMeshTexture0(int* material_id, float2* uv) {
+  SampledImage<float2D> _21 = *f_mesh_texture_0;
+  float2 _22 = *uv;
+  float4 _23 = ImageSampleImplicitLod(_21, _22, );
+  return _23;
+}
+
+

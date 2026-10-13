@@ -1,0 +1,946 @@
+{
+  "ResourceId::129": [
+    {
+      "event": 6,
+      "usage": "Clear"
+    },
+    {
+      "event": 14,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 16,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 17,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 18,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 19,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 21,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 23,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 24,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 25,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 26,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 28,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 29,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 30,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 31,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 33,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 34,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 35,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 36,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 38,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 39,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 40,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 41,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 43,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 45,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 47,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 49,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 51,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 52,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 54,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 56,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 58,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 60,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 62,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 64,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 65,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 67,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 69,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 70,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 72,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 74,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 76,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 78,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 80,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 82,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 83,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 85,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 87,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 89,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 91,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 93,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 95,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 96,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 98,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 101,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 102,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 104,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 106,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 108,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 110,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 112,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 114,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 116,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 118,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 120,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 122,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 124,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 126,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 128,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 130,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 132,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 134,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 136,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 138,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 140,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 143,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 145,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 146,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 148,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 152,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 154,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 155,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 157,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 159,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 161,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 162,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 166,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 171,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 173,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 175,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 177,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 180,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 182,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 184,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 187,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 188,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 189,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 190,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 192,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 195,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 197,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 198,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 205,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 208,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 211,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 214,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 217,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 220,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 223,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 226,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 229,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 232,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 235,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 238,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 241,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 244,
+      "usage": "ColorTarget"
+    },
+    {
+      "event": 247,
+      "usage": "ColorTarget"
+    }
+  ],
+  "ResourceId::157": [
+    {
+      "event": 6,
+      "usage": "Clear"
+    },
+    {
+      "event": 14,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 16,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 17,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 18,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 19,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 21,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 23,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 24,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 25,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 26,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 28,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 29,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 30,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 31,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 33,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 34,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 35,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 36,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 38,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 39,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 40,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 41,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 43,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 45,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 47,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 49,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 51,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 52,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 54,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 56,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 58,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 60,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 62,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 64,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 65,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 67,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 69,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 70,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 72,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 74,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 76,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 78,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 80,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 82,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 83,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 85,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 87,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 89,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 91,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 93,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 95,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 96,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 98,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 101,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 102,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 104,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 106,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 108,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 110,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 112,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 114,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 116,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 118,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 120,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 122,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 124,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 126,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 128,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 130,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 132,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 134,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 136,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 138,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 140,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 143,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 145,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 146,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 148,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 152,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 154,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 155,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 157,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 159,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 161,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 162,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 166,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 171,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 173,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 175,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 177,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 180,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 182,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 184,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 187,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 188,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 189,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 190,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 192,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 195,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 197,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 198,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 205,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 208,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 211,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 214,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 217,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 220,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 223,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 226,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 229,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 232,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 235,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 238,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 241,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 244,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 247,
+      "usage": "DepthStencilTarget"
+    },
+    {
+      "event": 248,
+      "usage": "Discard"
+    }
+  ]
+}

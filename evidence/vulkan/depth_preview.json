@@ -1,0 +1,8 @@
+{
+  "resource": "ResourceId::157",
+  "event": 198,
+  "minimum": 0.6485005617141724,
+  "maximum": 1.0,
+  "reversed_depth": false,
+  "display_curve": "pow(1-depth,0.2)"
+}

@@ -1,0 +1,78 @@
+SPIR-V 1.0 module, <id> bound of 72
+
+Generator: Shaderc over Glslang from Google - Contact David Neto, dneto@google.com
+Generator Version: 11
+
+Capability(Shader);
+
+
+
+MemoryModel(Logical, GLSL450);
+
+EntryPoint(Fragment, main, "main", {f_uv, o_color});
+
+ExecutionMode(main, OriginUpperLeft);
+
+Source(GLSL, 450);
+SourceExtension("GL_GOOGLE_cpp_style_line_directive");
+SourceExtension("GL_GOOGLE_include_directive");
+
+
+
+
+Input float2* f_uv : [[Location(0)]];
+struct Constants : [[Block]] {
+  float4x4 m_inverse_projection_view_matrix : [[ColMajor, MatrixStride(16), Offset(0)]];
+}
+PushConstant Constants* u_push_constants;
+Output float4* o_color : [[Location(0)]];
+UniformConstant SampledImage<floatCube>* f_skybox_texture : [[DescriptorSet(0), Binding(0)]];
+
+void main() {
+  float2* uv;
+  float4* front;
+  float4* back;
+  float3* dir;
+  float2 _13 = *f_uv;
+  float2 _14 = _13 * 2.0000;
+  float2 _16 = CompositeConstruct({1.0000, 1.0000});
+  float2 _17 = _14 - _16;
+  *uv = _17;
+  float4x4* _28 = &u_push_constants.m_inverse_projection_view_matrix;
+  float4x4 _29 = *_28;
+  float2 _30 = *uv;
+  float _32 = _30.x;
+  float _33 = _30.y;
+  float4 _34 = CompositeConstruct({_32, _33, -1.0000, 1.0000});
+  float4 _35 = _29 * _34;
+  *front = _35;
+  float4x4* _37 = &u_push_constants.m_inverse_projection_view_matrix;
+  float4x4 _38 = *_37;
+  float2 _39 = *uv;
+  float _40 = _39.x;
+  float _41 = _39.y;
+  float4 _42 = CompositeConstruct({_40, _41, 1.0000, 1.0000});
+  float4 _43 = _38 * _42;
+  *back = _43;
+  float4 _47 = *back;
+  float3 _48 = _47.xyz;
+  float* _52 = &back.w;
+  float _53 = *_52;
+  float3 _54 = CompositeConstruct({_53, _53, _53});
+  float3 _55 = _48 / _54;
+  float4 _56 = *front;
+  float3 _57 = _56.xyz;
+  float* _58 = &front.w;
+  float _59 = *_58;
+  float3 _60 = CompositeConstruct({_59, _59, _59});
+  float3 _61 = _57 / _60;
+  float3 _62 = _55 - _61;
+  *dir = _62;
+  SampledImage<floatCube> _69 = *f_skybox_texture;
+  float3 _70 = *dir;
+  float4 _71 = ImageSampleImplicitLod(_69, _70, );
+  *o_color = _71;
+  return;
+}
+
+
